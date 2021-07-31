@@ -1,0 +1,1324 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+/*    vertical-align:baseline;*/
+    background:transparent;
+}
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    scroll-behavior: smooth;
+    overflow-x: hidden; 
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    text-decoration: none;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/*  ============================
+    ===== Start of my code =====
+    ============================
+*/
+/* The main box where all the content will be limited too */
+body{
+    background: #DDDFDA;
+    font-family: Helvetica;
+}
+/*
+    =====================
+    ===== Variables =====
+    =====================
+*/
+:root{
+    --grass: #51AA0D; /* Light green */
+
+    --no-bkg-text-color: black;
+    --desc-border-color: #D28D15; /* Deep green */
+    --desc-text-color: black;
+
+    --ground-title-color: #4D98EC; /* Sky blue */
+    --ground-text-color: #CBC8C3; /* Light grey */
+    --ground-link-color: #EEF08E; /* Yellow */
+    --ground-hover-link-color: #F0B62D; /* Light orange */
+
+    --contact-bkg-color: #D9DEE1; /* Light gray */
+}
+.loading-screen{
+    background: linear-gradient(#416880, #4D98EC);
+    height: 100%;
+    width: 100%;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    position: relative;
+}
+.loading-screen img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 30%;
+    vertical-align: middle;
+}
+.sky{
+    background: linear-gradient(#4D98EC, #B1D2F5); /* Light blue to blue */
+    height: 90vh;
+    position: relative; /* stop abolute elements from going beyond 100 on screen */
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+@media only screen and (max-width: 600px){
+    .sky{
+        height: 150vh;
+    }
+}
+.grass{
+    height: 3vh;
+    background-color: var(--grass);
+}
+.ground{
+    background: linear-gradient(#593417,#402611);
+    position: relative;
+    z-index: 1000;
+}
+.page-box{
+    margin: 0 auto;
+    padding: 0 auto  
+    max-width: 1300px;
+    position: relative;
+    z-index: 100;
+}
+/* Mobile */
+@media only screen and (max-width: 600px){
+    .main-box{
+        flex-direction: column;
+    }
+}
+/* Main container for content inside sky/gass/ground */
+.main-box{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+    line-height: 1.5;
+}
+.main-box img{
+    position: absolute;
+    width: 400px;
+    height: 650px;
+    left: 50%;
+}
+/* Hi, I'm Merp */
+.main-box h1{
+    font-size: 60px;
+    color: var(--no-bkg-text-color);
+}
+/* LEFT BOX */
+.main-box-left{
+    width: 40%;
+    text-align: center;
+    position: relative;
+}
+/* RIGHT BOX */
+.main-box-right{
+    width: 60%;
+    text-align: center;
+}
+/* Pictures and links of social media + external profiles */
+.media{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+.media img{
+    width: 50px;
+}
+.skill-set{
+    display: flex;
+    justify-content: flex-start;
+    align-items: right;    
+}
+.skill-set img{
+    width: 10%;
+    padding: 20px;
+}
+@media only screen and (max-width: 600px){
+    .skill-set img{
+        width: 15%;
+    }
+}
+/*
+.name{
+    border-right: 2px solid var(--no-bkg-text-color);
+}
+*/
+@media only screen and (max-width: 600px){
+    .main-box h1,
+    .name{
+        font-size: 40px;
+    }
+}
+/*
+    ============================
+    ===== Ground Container =====
+    ============================
+    This is to split the About Me and the desc side by side
+*/
+.ground-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    position: relative;
+}
+.ground-container a{
+    color: var(--ground-link-color);
+}
+.ground-container a:hover{
+    color: var(--ground-hover-link-color);
+}
+@media only screen and (max-width: 600px){
+    .ground-container{
+        margin-top: 0%;
+        margin-bottom: 0%;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/*
+    =================
+    ===== Rocks =====
+    =================
+*/
+.rock{
+    position: absolute;
+}
+.rock img{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+}
+/* 
+    ====================
+    ===== About Me =====
+    ====================
+*/
+.about-me{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1%;
+}
+.about-me-title{
+    text-align: center;
+    color: var(--ground-title-color);
+    padding: 30px;
+    font-size: clamp(3rem, 4vw, 4rem);
+    font-weight: bold;
+}
+@media only screen and (max-width: 600px){
+    .about-me-title{
+        padding: 30px;
+        font-size: 60px;
+    }
+}
+/*
+    ===============================
+    ===== Passions & Projects =====
+    ===============================
+*/
+/* Sub headers - words describing myself */
+/* Each word fading in 0.5sec after each other */
+.passions,
+.project-timeline{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0; /* Hide for animation (JS) */ 
+    position: relative;
+    overflow-x: hidden;
+}
+/* List of headers about me */ 
+.passion-header,
+.project-timeline-header{
+    background: transparent;
+    padding: 15px;
+    color: var(--ground-text-color);
+    position: relative;
+    border: none;
+    outline: none;
+    font-size: clamp(1.7rem, 2vw, 3rem);
+    cursor: pointer;
+    text-align: right;
+    border-left: 5px solid var(--ground-text-color);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.passion-header:focus,
+.project-timeline-header:focus{
+    border-left: 5px solid var(--grass);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.passion-header:hover{
+    color: var(--grass);
+}
+@media only screen and (max-width: 600px){
+    .passions{
+        font-size: 30px;
+        text-align: center;
+    }
+}
+/*
+    ================================
+    ===== Passion Desc Section =====
+    ================================
+*/
+.passion-desc,
+.project-desc{
+    margin: 1%;
+    width: 60%;
+    height: 1000px;
+    position: relative;
+    opacity: 0;
+}
+.passion-section{
+    line-height: 1.5;
+    font-style: italic;
+    padding: 20px;
+    font-size: clamp(1.3rem, 1.5vw, 2rem);
+    opacity: 0;
+    color: var(--ground-text-color);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    position: absolute;
+}
+@media only screen and (max-width: 600px){
+    .passion-desc{
+        width: 100%;
+        height: 500px;
+    }
+    .passion-section{
+        border-top: 3px solid var(--ground-text-color);
+        font-size: 20px;
+        padding: 10px;
+    }
+}
+/*  
+    ====================
+    ===== Projects =====
+    ====================
+*/
+.project-title{
+    text-align: center;
+    color: var(--ground-title-color);
+    padding: 30px;
+    font-size: clamp(3rem, 4vw, 4rem);
+    font-weight: bold;
+}
+@media only screen and (max-width: 600px){
+    .project-title{
+        padding: 30px;
+        font-size: 60px;
+    }
+}
+.project-header{
+    color: var(--ground-text-color);
+    line-height: 1.3;
+}
+.project-header:hover{
+    color: var(--ground-hover-link-color);
+}
+.project-header h1{
+    font-size: clamp(1.7rem, 2vw, 3rem);
+}
+.project-header h2{
+    font-size: clamp(1.2rem, 1.3vw, 2.4rem);
+    font-style: italic;
+}
+.project-header p1{
+    font-size: clamp(1rem, 1vw, 2rem);
+}
+/* List headers */
+.project-timeline{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+@media only screen and (max-width: 600px){
+    .project-timeline{
+        text-align: center;
+        font-size: 30px;
+    }
+}
+.project-section{
+    line-height: 1.5;
+    font-style: italic;
+    padding: 20px;
+    font-size: clamp(1.3rem, 1.5vw, 2rem);
+    opacity: 0;
+    color: var(--ground-text-color);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    position: absolute;
+}
+.project-section img{
+    width: 90%;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media only screen and (max-width: 600px){
+    .project-desc{
+        width: 100%;
+        height: 1000px;
+    }
+    .project-section{
+        border-top: 2px solid var(--ground-text-color);
+    }
+    .project-section img{
+        width: 100%;
+    }
+}
+
+/* 
+    ======================
+    ===== Contact Me =====
+    ======================
+*/
+.contact-me{
+    position: relative;
+    text-align: center;
+}
+/* Title */
+.contact-me h1{
+    color: var(--ground-title-color);
+    font-size: clamp(3rem, 5vw, 6rem);
+}
+.contact-me form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contact-me form input[type="text"],
+.contact-me form textarea,
+.contact-me form button{
+    background: var(--contact-bkg-color);
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+/* Full name, email, subject */
+.contact-me form input[type='text']{
+    font-size: 20px;
+}
+/* Message block */
+.contact-me form textarea{
+    width: 50%;
+    font-size: 17px;
+    height: 250px;
+}
+/* Submit button */
+.contact-me form button{
+    font-size: 25px;
+}
+/* Icons for gmail, linkedin, github */
+.contact-icons{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+.contact-icons img{
+    margin: 20px;
+    width: clamp(3rem, 3%, 6rem);
+}
+.contact-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--ground-text-color);
+    font-size: 30px;
+    margin-top: 20px;
+}
+@media only screen and (max-width: 600px){
+    .contact-me form input[type='text']{
+        width: 50%;
+    }
+    .contact-me form textarea{
+        width: 90%;
+    }
+    .contact-icons img{
+        width: 10%;
+    }
+}
+
+/*  =========================
+    ===== Weather Boxes =====
+    =========================
+*/
+/* User input location */
+.weather-box input[type="text"]{
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: transparent;
+    color: var(--no-bkg-text-color);
+    border-top: hidden;
+    border-right: hidden;
+    border-left: hidden;
+    border-bottom: 2px solid var(--no-bkg-text-color);
+}
+.weather-box input[type="text"]:focus{
+    outline-width: 0;
+}
+.weather-box h1{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+.weather-info{
+    display: flex;
+    justify-content: center;
+}
+.weather-info p1{
+    font-size: 20px;
+}
+.weather-sector{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    text-align: right;
+    margin: 10px;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #D9DEE1;
+}
+/* Text aligning left and right within box */
+.align-left{
+    float: left;
+    padding-right: 20px;
+}
+.align-right{
+    float: right;
+}
+@media only screen and (max-width: 600px){
+    .weather-info{
+        margin-top: 150px;
+    }
+}
+/*
+    ===========================
+    ===== Progression Box =====
+    ===========================
+*/
+.progress-box{
+    width: 100%;
+    background-color: #D9DEE1;
+    margin-bottom: -3px;
+    border: 2px solid black;
+    opacity: 1;
+    position: relative;
+}
+.progress-bar{
+    width: 0%;
+    height: 35px;
+    background-color: #D28D15;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.progress-text{
+    font-size: 20px;
+    line-height: 35px;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.progress-text div{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+@media only screen and (max-width: 600px){
+}
+/*
+    ========================
+    ===== Small Clouds =====
+    ========================
+/* Cloud box to fit in */
+.small-cloud{
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    z-index: 10;
+    opacity: 0;
+}   
+/* Base of the cloud (long oval with flat top/bottom) */
+.small-cloud span:nth-child(4){
+    width: 150px;
+    height: 30px;
+    border-radius: 100px;
+    background: linear-gradient(white, #CCCCCC); /* Makes the bottom of the cloud darker, but white on the top */
+    position: absolute;
+    bottom: 0;
+    left: 13%;
+}
+/* Left circle puff */
+.small-cloud span:nth-child(1){
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+}
+/* Middle circle puff */
+.small-cloud span:nth-child(2){
+    width: 75px;
+    height: 75px;
+    border-radius: 75px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+}
+/* Right circle puff */
+.small-cloud span:nth-child(3){
+    width: 55px;
+    height: 60px;
+    border-radius: 60px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 55%;
+}
+/*
+@keyframes left_to_right{
+    0% {left: 0%; opacity: 0;}
+    1% {left: 1%; opacity: 1;}
+    100% {left: 90%; opacity: 0;}
+} */
+/*
+    =====================
+    ===== Big Cloud =====
+    =====================
+*/
+.static-big-cloud,
+.big-cloud{
+    position: absolute;
+    width: 100%;
+    height: 75px;
+    border-radius: 75px;
+    background: linear-gradient(white, #CCCCCC); /* Makes the bottom of the cloud darker, but white on the top */
+    border-bottom: 1px solid #CACACA;
+    top: -5%;
+    z-index: 10;
+}
+.static-big-cloud span:nth-child(1),
+.big-cloud span:nth-child(1){
+    position: absolute;
+    width: 600px;
+    height: 100px;
+    left: 0%;
+    border-radius: 100px;
+    border-bottom: 1px solid #CACACA;
+    background: linear-gradient(white, #CCCCCC); /* Makes the bottom of the cloud darker, but white on the top */
+}
+.static-big-cloud span:nth-child(2),
+.big-cloud span:nth-child(2){
+    position: absolute;
+    width: 500px;
+    height: 150px;
+    left: 20%;
+    border-radius: 100px;
+    border-bottom: 1px solid #CACACA;
+    background: linear-gradient(white, #CCCCCC); /* Makes the bottom of the cloud darker, but white on the top */
+}
+.static-big-cloud span:nth-child(3),
+.big-cloud span:nth-child(3){
+    position: absolute;
+    width: 800px;
+    height: 125px;
+    left: 10%;
+    border-radius: 100px;
+    border-bottom: 1px solid #CACACA;
+    background: linear-gradient(white, #CCCCCC); /* Makes the bottom of the cloud darker, but white on the top */
+}
+.static-big-cloud span:nth-child(4),
+.big-cloud span:nth-child(4){
+    position: absolute;
+    width: 800px;
+    height: 100px;
+    left: 40%;
+    border-radius: 100px;
+    border-bottom: 1px solid #CACACA;
+    background: linear-gradient(white, #CCCCCC); /* Makes the bottom of the cloud darker, but white on the top */
+}
+.static-big-cloud span:nth-child(5)
+.big-cloud span:nth-child(5){
+    position: absolute;
+    width: 500px;
+    height: 115px;
+    left: 75%;
+    border-radius: 100px;
+    border-bottom: 1px solid #CACACA;
+    background: linear-gradient(white, #CCCCCC); /* Makes the bottom of the cloud darker, but white on the top */
+}
+
+@keyframes big_cloud_0left_to_right{
+    0% {left: -100%; opacity: 1;}
+    100% {left: 100%; opacity: 1;}
+}
+@keyframes big_cloud_10left_to_right{
+    0% {left: 10%; opacity: 1;}
+    50% {left: 100%; opacity: 1;}
+    51% {left: 100%; opacity: 0;}
+    52% {left: -80%; opacity: 0;}
+    53% {left: -80% opacity: 1;}
+    100% {left: 10%; opacity: 1;}
+}
+@keyframes big_cloud_50left_to_right{
+    0% {left: 50%; opacity: 1;}
+    50% {left: 200%; opacity: 1;}
+    51% {left: 200%; opacity: 0;}
+    52% {left: -100%; opacity: 0;}
+    53% {left: -100% opacity: 1;}
+    100% {left: 50%; opacity: 1;}
+}
+/*  
+    ================
+    ===== Rain =====
+    ================
+*/
+.rain{
+    position: absolute;
+    width: 3px;
+    height: 20px;
+    opacity: 0;
+    z-index: 1;
+    background: linear-gradient(#CCCCCC, #B3D8E6);
+    animation: top_to_bottom 1.5s linear infinite;
+}
+@keyframes top_to_bottom{
+    0% {top: -10%; opacity: 1;}
+    100% {top: 120%; opacity: 1;}
+}
+
+/*
+    ================
+    ===== Moon =====
+    ================
+*/
+.moon,
+.moon span:nth-child(1),
+.moon span:nth-child(2),
+.moon span:nth-child(3){
+    position: absolute;
+}
+.moon{
+    width: 75px;
+    height: 75px;
+    border-radius: 75px;
+    opacity: 0;
+    z-index: 5;
+    background-color: #A2A2A2; /* Light blue glow */
+    filter: blur(0.07rem);
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.moon span:nth-child(1){
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    box-shadow: 0px 0px 40px 40px #95ABBE; /* Orange */
+}
+.moon span:nth-child(2){
+    width: 50%;
+    height: 50%;
+    top: 20%;
+    left:  10%;
+    background-color: #696868; /* Darker gray than moon */
+    filter: blur(0.7rem);
+}
+.moon span:nth-child(3){
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+    top: 15%;
+    left: 50%;
+    background-color: #696868; /* Darker gray than moon */
+    filter: blur(0.7rem);
+}
+
+/*
+    ===============
+    ===== Sun =====
+    ===============
+*/
+.sun{
+    width: 200px;
+    height: 200px;
+    border-radius: 150px;
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    background-color: #F7F7F7; /* White-ish */
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.sun span:nth-child(1){
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    box-shadow: 0px 0px 80px 80px #D28D15; /* Orange */
+}
+.sun span:nth-child(2){
+    width: 85%;
+    height: 85%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    box-shadow: 0px 0px 40px 40px #F2E96E; /* Light yellow */
+}
+.sun span:nth-child(3){
+    width: 75%;
+    height: 75%;
+    border-radius: 75%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    box-shadow: 0px 0px 40px 40px #F7F7F7;
+}
+.sun span:nth-child(4){
+    width: 78%;
+    height: 78%;
+    border-radius: 75%;
+    background-color: #F7F7F7; /* White-ish */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+/* 
+    =================
+    ===== Stars =====
+    =================
+*/
+.star{
+    width: 3px;
+    height: 3px;
+    background-color: #F3F1EF;
+    box-shadow: 0px 0px 10px 5px #F3F1EF;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    animation: shiny_stars 5s forwards infinite;
+}
+@keyframes shiny_stars{
+    0% { box-shadow: 0px 0px 10px 5px #F3F1EF; }
+    50% { box-shadow: 0px 0px 20px 10px #F3F1EF; }
+    100% { box-shadow: 0px 0px 10px 5px #F3F1EF; }
+}
+/* Outer circle */
+.star span:nth-child(1){
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    /* #CBACA1 */
+    box-shadow: 0px 0px 3px 3px #CBACA1;
+}
+/* Inner circle */
+.star span:nth-child(2){
+    width: 85%;
+    height: 85%;
+    border-radius: 85%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    /* #FBFAF8 */
+    box-shadow: 0px 0px 3px 3px #F3F1EF;
+}
+
+/*
+    ================
+    ===== Tree =====
+    ================
+*/
+/* Outline of whole thing (bark) */
+
+.tree{
+    width: 20px;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 80%;
+    bottom: 0;
+    z-index: 10;
+    margin: auto;
+    background: #716745;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    animation: grow_bark 3s;
+}
+/* Hide the section words until the tree is formed after few secs */
+.tree p1{
+    opacity: 0;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    animation: show_element 2s forwards 1s;
+}
+.tree p1:hover{
+    color: var(--no-bkg-text-color);
+}
+@keyframes show_element{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes grow_bark{
+    0% {height: 0px;}
+    100% {height: 400px;}
+}
+
+/*  ===== Tree Branches =====   */
+/* Bottom right branch */
+.branch span:nth-child(1){
+    width: 50%;
+    height: 27%;
+    transform: rotate(-130deg);
+    right: -150%;
+    top: 50%;
+    position: absolute;
+    background: #716745;
+}
+/* Bottom left branch */
+.branch span:nth-child(2){
+    width: 50%;
+    height: 27%;
+    transform: rotate(130deg);
+    left: -150%;
+    top: 40%;
+    position: absolute;
+    background: #716745;
+}
+/* Middle right branch */
+.branch span:nth-child(3){
+    width: 50%;
+    height: 27%;
+    transform: rotate(-130deg);
+    right: -150%;
+    top: 20%;
+    position: absolute;
+    background: #716745;
+}
+/* Middle left branch */
+.branch span:nth-child(4){
+    width: 50%;
+    height: 27%;
+    transform: rotate(130deg);
+    left: -150%;
+    top: 10%;
+    position: absolute;
+    background: #716745;
+}
+/*  ===== Tree defaults =====   */
+/* Light green background */
+.tree-top,
+.tree-top span{
+    position: absolute;
+    background: #106E10;
+}
+.tree-projects,
+.tree-projects span,
+.tree-projects p1,
+.tree-me,
+.tree-me span,
+.tree-me p1,
+.tree-resume,
+.tree-resume span,
+.tree-resume p1,
+.tree-contact,
+.tree-contact span,
+.tree-contact p1{
+    position: absolute;
+    color: white;
+    cursor: pointer;
+}
+/* Apply slightly darker green than top */
+.tree-projects span,
+.tree-me span{
+    background: #025D00;
+}
+.tree-resume span,
+.tree-contact span{
+    background: #024F00;
+}
+/*  ===== Tree top ===== */
+.tree-top{
+    width: 300px;
+    height: 300px;
+    border-radius: 300px;
+    background: none;
+    top: -50%;
+    left: -700%;
+    animation: grow_top 3s forwards;   
+}
+@keyframes grow_top{
+    0% {width: 0px; height: 0px; top: 0; left: 0;}
+    100% {width: 300px; height: 300px; top: -50%; left: -700%;}
+}
+/* Bottom left bush */
+.tree-top span:nth-child(1){
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    top: 20%;
+    left: -5%;
+}
+/* Top left bush */
+.tree-top span:nth-child(2){
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+}
+/* Very top bush */
+.tree-top span:nth-child(3){
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    top: -10%;
+    right: 20%;
+}
+/* Top right bush */
+.tree-top span:nth-child(4){
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    top: 5%;
+    right: 0%;
+}
+/* Bottom right bush */
+.tree-top span:nth-child(5){
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    top: 20%;
+    right: -7%;
+}
+/* Overall top */
+.tree-top span:nth-child(6){
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+/*  ===== Tree Me ===== */
+/* Top left branch section */
+.tree-me{
+    width: 150px;
+    height: 105px;
+    border-radius: 100px;
+    background: none;
+    animation: tree_me 3s forwards;
+}
+@keyframes tree_me{
+    0% {width: 0px; height: 0px; top: 0%; left: 0%;}
+    100% {width: 150px; height: 105px; top: 5%; left: -900%;}
+}
+/* Bottom right circle */
+.tree-me span:nth-child(1){
+    width: 70%;
+    height: 70%;
+    border-radius: 70%;
+    right: -40%;
+    top: 10%;
+}
+/* Top circle */
+.tree-me span:nth-child(2){
+    width: 70%;
+    height: 70%;
+    border-radius: 70%;
+    right: -10%;
+    top: -30%;
+}
+/* Bottom left circle */
+.tree-me span:nth-child(3){
+    width: 70%;
+    height: 70%;
+    border-radius: 70%;
+    right: 20%;
+    top: 10%;
+}
+.tree-me p1{
+    font-size: 40px;
+    top: 5%;
+    right: 5%;
+}
+/* ===== Tree Projects =====    */
+/* Top left branch section */
+.tree-projects{
+    border-radius: 100px;
+    background: none;
+    animation: tree_projects 3s forwards;
+}
+@keyframes tree_projects{
+    0% {width: 0px; height: 0px; top: 0%; right: 0%;}
+    100% {width: 150px; height: 105px; top: 10%; right: -900%}
+}
+/* Bottom left circle */
+.tree-projects span:nth-child(1){
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    left: -40%;
+    top: -10%;
+}
+/* Top circle */
+.tree-projects span:nth-child(2){
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    left: -10%;
+    top: -70%;
+}
+/* Bottom right circle */
+.tree-projects span:nth-child(3){
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    left: 20%;
+    top: -10%;
+}
+.tree-projects p1{
+    font-size: 40px;
+    left: -5%;
+}
+/*  ===== Tree Resume ===== */
+/* Bottom left branch section */
+.tree-resume{
+    width: 150px;
+    height: 105px;
+    background: none;
+    border-radius: 100px;
+    top: 30%;
+    left: -950%;
+    animation: tree_resume 3s forwards;
+}
+@keyframes tree_resume{
+    0% {width: 0px; height: 0px; top: 0%; left: 0%;}
+    100% {width: 150px; height: 105px; top: 30%; left: -950%;}
+}
+/* Bottom right circle */
+.tree-resume span:nth-child(1){
+    width: 90%;
+    height: 90%;
+    border-radius: 90%;
+    right: -40%;
+    top: 10%;
+}
+/* Top circle */
+.tree-resume span:nth-child(2){
+    width: 90%;
+    height: 90%;
+    border-radius: 90%;
+    right: -10%;
+    top: -30%;
+}
+/* Bottom left circle */
+.tree-resume span:nth-child(3){
+    width: 90%;
+    height: 90%;
+    border-radius: 90%;
+    right: 20%;
+    top: 10%;
+}
+.tree-resume p1{
+    font-size: 40px;
+    top: 20%;
+    left: 20%;
+}
+/*  ===== Tree Contact ===== */
+/* Bottom right branch section */
+.tree-contact{
+    width: 150px;
+    height: 105px;
+    border-radius: 100px;
+    background: none;
+    top: 40%;
+    right: -800%;
+    animation: tree_contact 3s forwards;
+}
+@keyframes tree_contact{
+    0% {width: 0px; height: 0px; top: 0%; right: 0%;}
+    100% {width: 150px; height: 105px; top: 40%; right: -800%;}
+}
+/* Bottom right circle */
+.tree-contact span:nth-child(1){
+    width: 90%;
+    height: 90%;
+    border-radius: 90%;
+    right: -40%;
+    top: 10%;
+}
+/* Top circle */
+.tree-contact span:nth-child(2){
+    width: 90%;
+    height: 90%;
+    border-radius: 90%;
+    right: -10%;
+    top: -30%;
+}
+/* Bottom left circle */
+.tree-contact span:nth-child(3){
+    width: 90%;
+    height: 90%;
+    border-radius: 90%;
+    right: 20%;
+    top: 10%;
+}
+.tree-contact p1{
+    font-size: 40px;
+    top: 25%;
+    left: 20%;
+}
+@keyframes grow_leaves{
+    0% {width: 0%;}
+    100% {width: 100%;}
+}
+
