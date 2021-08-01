@@ -167,10 +167,13 @@ async function getWeather(id){
 		sunsetToday = (sunsetDate.getUTCHours() + tz) * 3600 + sunsetDate.getUTCMinutes() * 60 + sunsetDate.getUTCSeconds(); // Time for sunset
 
 		// Apply sun+moon default positions 
-		sunDiv.style.top = 0; 
-		sunDiv.style.left = 0;
-		moonDiv.style.top = 0;
-		moonDiv.style.left = 0; 
+		// Check if JS has applied the positioning. If it has, it will move sun, moon smoothly if user inputted new city
+		if (sunDiv.style.top == ""){
+			sunDiv.style.top = 0; 
+			sunDiv.style.left = 0;
+			moonDiv.style.top = 0;
+			moonDiv.style.left = 0; 
+		}
 
 		// Sometimes utc hr would be 0, but timezone is -5, so it results in neg #
 		// Prevents it from showing night time before sunset
@@ -519,6 +522,7 @@ for (i = 0; i < peuDesc.children.length; i++){
 	peuSections[i] = peuDesc.children[i]; 
 } 	
 
+// Shows the desc when clicking on a header
 function showDesc(num){
 	switch (num){
 		case 1: 
@@ -540,14 +544,17 @@ function showDesc(num){
 		for (i = 1; i < passionSectiona.length; i++){
 			if (i == num){
 				passionHeader[i].style.color = "#51AA0D"; // Light green
+				passionHeader[i].style.borderLeftColor = "#51AA0D";
 				passionSectiona[i].style.opacity = 1;
 			} else {
 				passionHeader[i].style.color = "#CBC8C3"; // Light gray
+				passionHeader[i].style.borderLeftColor = "#CBC8C3";
 				passionSectiona[i].style.opacity = 0;
 			}
 		}
 	}
 }
+// Default to show the first on load
 showDesc(1);
 
 function showSection(header, num){
@@ -576,9 +583,11 @@ function showSection(header, num){
 		for (i = 0; i < header.parentNode.children.length; i++){
 			if (i == num){
 				header.style.color = "#51AA0D"; // Light green
+				header.style.borderLeftColor = "#51AA0D";
 				peuSections[i].style.opacity = 1;
 			} else {
 				header.parentNode.children[i].style.color = "#CBC8C3"; // Light gray
+				header.parentNode.children[i].style.borderLeftColor = "#CBC8C3";
 				peuSections[i].style.opacity = 0;
 			}
 		}

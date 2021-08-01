@@ -220,12 +220,17 @@
 				<div class = "project-title"> Projects </div>
 				<a href="http://www.peuresearchcenter.com" target = "_blank">
 					<div class = "project-header"> 
-						<h1> Peuresearchcenter.com </h1>
+						<h1> <u>Peuresearchcenter.com</u> </h1>
 						<h2> March 2020 - Present </h2>
 						<p1> HTML, CSS, Vanilla JS, Guild Wars 2 APIs, Google Scripts APIs </p1>
-
 					</div>
 				</a>
+
+				<div class = "project-sources">
+					<button><a href = "http://www.peuresearchcenter.com" target = "_blank">Live</a> </button>
+					<a href = "https://github.com/Peureki/peuresearchcenter" target = "_blank"><img src = "./images/github.png"></a>
+				</div>
+
 				<div id = "project-timeline" class = "project-timeline">
 					<button class = "project-timeline-header" onclick="showSection(this, 0);"> TL;DR </button>
 					<button class = "project-timeline-header" onclick="showSection(this, 1);"> Google Spreadsheets </button>
@@ -289,9 +294,9 @@
 			<h1> Let's work together! </h1>
 			<div class = "contact-info">
 				<div class = "contact-icons">
-					<img src ="./images/gmail.png" loading = "lazy">
-					<img src = "./images/linkedin.png" loading = "lazy">
-					<img src = "./images/github.png" loading = "lazy">
+					<a href = "mailto:newyenmatt@gmail.com"><img src ="./images/gmail.png" title = "newyenmatt@gmail.com" loading = "lazy"></a>
+					<a href = "https://www.linkedin.com/in/mattnewyen/" target = "_blank"><img src = "./images/linkedin.png" loading = "lazy"></a>
+					<a href ="https://github.com/Peureki" target = "_blank"><img src = "./images/github.png" loading = "lazy"></a>
 				</div>
 			</div>
 			<!--

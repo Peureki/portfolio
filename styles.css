@@ -129,7 +129,7 @@ body{
     --grass: #51AA0D; /* Light green */
 
     --no-bkg-text-color: black;
-    --desc-border-color: #D28D15; /* Deep green */
+    --desc-border-color: #D28D15; /* orange */
     --desc-text-color: black;
 
     --ground-title-color: #4D98EC; /* Sky blue */
@@ -306,17 +306,22 @@ body{
 .about-me{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     margin: 1%;
+    width: 40%;
 }
 .about-me-title{
     text-align: center;
     color: var(--ground-title-color);
-    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     font-size: clamp(3rem, 4vw, 4rem);
     font-weight: bold;
 }
 @media only screen and (max-width: 600px){
+    .about-me{
+        width: initial;
+    }
     .about-me-title{
         padding: 30px;
         font-size: 60px;
@@ -351,12 +356,6 @@ body{
     cursor: pointer;
     text-align: right;
     border-left: 5px solid var(--ground-text-color);
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.passion-header:focus,
-.project-timeline-header:focus{
-    border-left: 5px solid var(--grass);
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
@@ -409,14 +408,26 @@ body{
     ===== Projects =====
     ====================
 */
+.projects{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 40%;
+}
 .project-title{
     text-align: center;
     color: var(--ground-title-color);
-    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     font-size: clamp(3rem, 4vw, 4rem);
     font-weight: bold;
 }
 @media only screen and (max-width: 600px){
+    .projects{
+        align-items: center;
+        width: initial;
+        text-align: center;
+    }
     .project-title{
         padding: 30px;
         font-size: 60px;
@@ -445,12 +456,6 @@ body{
     flex-direction: column;
     justify-content: center;
 }
-@media only screen and (max-width: 600px){
-    .project-timeline{
-        text-align: center;
-        font-size: 30px;
-    }
-}
 .project-section{
     line-height: 1.5;
     font-style: italic;
@@ -470,7 +475,37 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
+.project-sources{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.project-sources a{
+    color: black;
+}
+.project-sources a:hover{
+    color: var(--ground-text-color);
+}
+.project-sources button,
+.project-sources img{
+    cursor: pointer;
+}
+.project-sources button {
+    font-size: 20px;
+    background: #D28D15;
+    border-radius: 10px;
+    padding: 10px;
+    vertical-align: middle;
+    border: none;
+}
+.project-sources img {
+    width: clamp(3rem, 3%, 6rem);
+    vertical-align: middle;
+}
 @media only screen and (max-width: 600px){
+    .project-timeline{
+        text-align: center;
+        font-size: 30px;
+    }
     .project-desc{
         width: 100%;
         height: 1000px;
@@ -525,12 +560,7 @@ body{
     font-size: 25px;
 }
 /* Icons for gmail, linkedin, github */
-.contact-icons{
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-}
-.contact-icons img{
+.contact-icons a img{
     margin: 20px;
     width: clamp(3rem, 3%, 6rem);
 }
@@ -550,7 +580,7 @@ body{
     .contact-me form textarea{
         width: 90%;
     }
-    .contact-icons img{
+    .contact-icons a img{
         width: 10%;
     }
 }
