@@ -77,13 +77,15 @@
 					</div> 
 				</a>
 
-				<div class = "tree-resume">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<p1>Resume</p1>
-				</div>
+				<a href = "./images/MattNguyen_Resume.pdf">
+					<div class = "tree-resume">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<p1>Resume</p1>
+					</div>
+				</a>
 
 				<a href = "#contact">
 					<div class = "tree-contact">
@@ -104,21 +106,12 @@
 				<div>
 					<h1 class = "name">Hi, I'm <br>Matt <span id = "name"></span></h1>
 				</div>
-				
-				<!--
-				<div class = "about-me">
-					<p2> I'm an individual that thrives in passion and learning something new. Every day, the goal is to become the best version of myself. I strive to build projects with code that is efficent, functional, and simple as possible while having fun with it! Let's collaborate and build something unique!</p2>
-				</div>
-				-->
 
 				<!-- Input box for weather fun -->
 				<div class = "weather-box">
 					<div>
 						<input type = "text" id = "cityInput" placeholder = "Chicago, IL" value = "Chicago, IL"></input>
-						<input type = "button" value = "Search" onclick = "getWeather('cityInput')"></input>
-						<input type = "button" value = "Day" onclick = "day();"></input>
-						<input type = "button" value = "Night" onclick = "night();"></input>
-						<input type = "button" value = "Rain" onclick = "rain('Rain');"></input>
+						<input type = "button" id = "cityButton" value = "Search" onclick = "getWeather('cityInput')"></input>
 					</div>
 					<h1 id = "cityName"> </h1>
 
@@ -233,11 +226,10 @@
 
 				<div id = "project-timeline" class = "project-timeline">
 					<button class = "project-timeline-header" onclick="showSection(this, 0);"> TL;DR </button>
-					<button class = "project-timeline-header" onclick="showSection(this, 1);"> Google Spreadsheets </button>
+					<button class = "project-timeline-header" onclick="showSection(this, 1);"> Concept </button>
 					<button class = "project-timeline-header" onclick="showSection(this, 2);"> Problem </button>
 					<button class = "project-timeline-header" onclick="showSection(this, 3);"> Solution </button>
-					<button class = "project-timeline-header" onclick="showSection(this, 4);"> Process </button>
-					<button class = "project-timeline-header" onclick="showSection(this, 5);"> Today </button>
+					<button class = "project-timeline-header" onclick="showSection(this, 4);"> Today </button>
 				</div>
 			</div> <!-- End of projects -->
 
@@ -245,13 +237,13 @@
 				<div class = "project-section">
 					The goal of the website to provide tools, services, and information for players of Guild Wars 2 to earn gold (in-game currency) and better their quality of life. Currently it services hundreds of unique players weekly and I update it frequently. It fetches API via Guild Wars 2's official API and my own Google Sheets Script API. This website is what ignited my passion to code!
 
-					<img src = "./images/peu-choya.png" style = "width: 40%;" loading = "lazy">
+					<img src = "./images/peu-choya.png" style = "width: 40%" loading = "lazy">
 				</div>
 
 				<div class = "project-section">
 					Timeline: January 2019 - January 2020
 					<br><br>
-					The project with the idea of creating a space where players could find the best areas in the game to farm gold. Guild Wars 2 is a very open-world heavy type of game that splits it's massive world into maps. Each map has it's own unique community events, bosses, and rewards. Over time, I collected datasets of items I've farmed and calculated into a Google Spreadsheet and created a benchmark with most maps in the game. The spreadsheet ended up having up to 100 individual sheets, custom API calls from Guild Wars 2's API, custom scripts to auto-sort or update lists, and had a live audience of about 30-60 at all hours. This led to a problem...
+					The project came with the idea of creating a space where players could find the best areas in the game to farm gold. Guild Wars 2 is a very open-world heavy type of game that splits it's massive world into numerous maps. Inititally, the concept was to create a spreadsheet as a database to showcase live benchmarks. The spreadsheet was created by Google Sheets and using Google Apps Script to fetch Guild Wars 2's API. 
 
 					<img src = "./images/peu-spreadsheet.PNG" loading = "lazy">
 				</div>
@@ -259,15 +251,7 @@
 				<div class = "project-section">
 					Timeline: January 2019 - January 2020
 					<br><br>
-					Google Sheets could not handle having constant traffic, while having a massive spreadsheet, while having me constantly edit data. It would become unresponsive, slow, and even disconnect/prevent users from accessing. Despite this, I continued working on the spreadsheets. Around January 2020, the spreadsheet would be down up to 20 minutes for the same reasons. Enough was enough. I decided to Google/YouTube, "How do I build a website easily" hoping for a solution...
-
-					<img src = "./images/peu-google.PNG" loading = "lazy">
-				</div>
-
-				<div class = "project-section">
-					Timeline: January 2020 - Feburary 2020
-					<br><br>
-					The initial solution was to create a website from Wix. With no experience, I thought this would be the right choice. After a month of tinkering, it was far from the solution I wanted. I wanted more. I wanted to customize my elements, use API, new designs, and the list goes on. The solution was to learn how to build a website from scratch. This begins the process...
+					Google Sheets could not handle having constant traffic, while having a massive spreadsheet, while having me constantly edit data. It would become unresponsive, slow, and even disconnect/prevent users from accessing. From no web experience, I created a website from Wix, but that plan obviously fell through. I wanted to build designs and features myself. 
 
 					<img src = "./images/peu-wix.PNG" loading = "lazy">
 				</div>
@@ -275,7 +259,7 @@
 				<div class = "project-section">
 					Timeline: March 2020 - June 2020
 					<br><br>
-					Coicidentally, at the same time of this learning process, COVID-19 lockdowns started. This was the perfect opportunity to learn as much as possible while staying at home. I spent every single day for months YouTubing, looking up tips from W3Schools, connecting with current web developer friends, trialing and erroring code. It took a full 4 months to learn HTML, CSS, and JavaScript from nothing to building a live website for the Guild Wars 2 community. 
+					It took a full 4 months to learn HTML, CSS, and JavaScript from nothing to building a live website for the Guild Wars 2 community. I learned from W3Schools, YouTube tutorials, and consistant googling of StackOverflow. 
 
 					<img src = "./images/peu-homepage.PNG" loading = "lazy">
 				</div>

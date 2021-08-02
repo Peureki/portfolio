@@ -48,6 +48,14 @@ var randomNum,
 	html = '',
 	d = new Date();
 
+var enterInput = document.getElementById('cityInput'),
+	cityButton = document.getElementById('cityButton');
+enterInput.addEventListener('keyup', function(event){
+	if (event.keyCode === 13){
+		event.preventDefault();
+		cityButton.click();
+	}
+});
 
 async function getWeather(id){
 	var cityInput, state;
@@ -59,6 +67,8 @@ async function getWeather(id){
 		humidity = document.getElementById('humidity'),
 		tempFeels = document.getElementById('tempFeels'),
 		currentWeather = document.getElementById('currentWeather');
+
+
 
 	// If text1 bar returns blank, don't do anything
 	if (id == null){
@@ -729,7 +739,7 @@ var counterCheck1 = 0,
 	counterCheck3 = 0;
 	counterCheck4 = 0;
 
-// Animatio
+// Animation to write diff versions of my last name
 function typeWriter(){
 	// Create New-Gen
 	if (counterCheck1 == 0){
@@ -832,7 +842,7 @@ function typeWriter(){
 		}, 1000);
 	}
 }
-setTimeout(typeWriter, 2000);
+setTimeout(typeWriter, 1000);
 
 var tree = document.getElementById('apply-tree'), 
 	cityInput = document.getElementById('cityInput'),
