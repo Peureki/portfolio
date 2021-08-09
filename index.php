@@ -8,12 +8,7 @@
 
 	<title> Matt Nguyen </title>
 	<link rel = "shortcut icon" href = "./images/logo.png">
-	<script>
-		var last_modified = document.lastModified,
-			css_version = '<link id = "css-version" rel ="stylesheet" type="text/css" href="./styles.css?v='+ last_modified + '">',
-			js_version = '<script type ="text/javascript" src = "./weather.js?v=' + last_modified + '">'+'</'+'script>';
-		document.write(css_version); 
-	</script>
+	<link id = "css-main" type = "text/css" rel = "stylesheet" href = "./styles.css">
 </head>
 <body>
 	<!--
@@ -77,7 +72,7 @@
 					</div> 
 				</a>
 
-				<a href = "./images/MattNguyen_Resume.pdf">
+				<a href = "./images/Matt_Nguyen_Resume.pdf">
 					<div class = "tree-resume">
 						<span></span>
 						<span></span>
@@ -308,6 +303,15 @@
 		</div> <!-- End of contact me -->
 	</div> <!-- End of ground -->
 </body>
-<script>document.write(js_version);</script>
+<script id = "js-main" type = "text/javascript" src = "./weather.js"></script>
 <script> getWeather('cityInput'); </script>
+
+<!-- VERSIONING --> 
+<script> 
+	var css_main = "./styles.css?v='" + document.lastModified + "'",
+		js_main = "./weather.js?v='" + document.lastModified +"'";
+
+	document.getElementById('css-main').href = css_main;
+	document.getElementById('js-main').src = js_main; 
+</script>
 </html
