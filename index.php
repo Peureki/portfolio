@@ -210,7 +210,7 @@
 					<div class = "project-header"> 
 						<h1> <u>Peuresearchcenter.com</u> </h1>
 						<h2> March 2020 - Present </h2>
-						<p1> HTML, CSS, Vanilla JS, Guild Wars 2 APIs, Google Scripts APIs </p1>
+						<p1> HTML, CSS, Vanilla JS, PHP, Guild Wars 2 APIs, Google Scripts </p1>
 					</div>
 				</a>
 
