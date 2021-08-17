@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<?php 
+		// $base  = "https://www.mattnewyen.com";
+		$base = "http://localhost/portfolio";
+		$date = date("D M d, Y G:i"); // For versioning
+	?>
+
 	<link rel ="stylesheet" type="text/css" href="./images/weather-icons-master/css/weather-icons.css">
 	<!--<link rel ="stylesheet" type="text/css" href="./styles.css">-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +14,196 @@
 
 	<title> Matt Nguyen </title>
 	<link rel = "shortcut icon" href = "./images/logo.png">
-	<link id = "css-main" type = "text/css" rel = "stylesheet" href = "./styles.css">
+	<link type = "text/css" rel = "stylesheet" href = "<?php echo $base;?>/styles.css?v=<?php echo $date;?>">
 </head>
 <body>
-	<!--
-	<div id = "loading-screen" class = "loading-screen">
-		<img src = "./images/logo.png">
-	</div> -->
-	<div id = "sky" class = "sky">
+	<div class = "nav-container">
+		<ul class = "nav-bar">
+			<li class = "nav-dropdown">
+				<a class = "nav-header" href = "#exosphere"> Exosphere </a>
+				<ul class = "nav-sub">
+					<li> Intro </li>
+				</ul>
+			</li>
+			<li class = "nav-dropdown">
+				<a class = "nav-header" href = "#thermosphere"> Thermosphere </a>
+				<ul class = "nav-sub">
+					<li> About Me </li>
+				</ul>
+			</li>
+			<li class = "nav-dropdown">
+				<a class = "nav-header" href = "#mesosphere"> Mesosphere </a>
+				<ul class = "nav-sub">
+					<li> Projects </li>
+				</ul>
+			</li>
+			<li class = "nav-dropdown">
+				<a class = "nav-header" href = "#stratosphere"> Stratosphere </a>
+				<ul class = "nav-sub">
+					<li> Contact Me </li>
+				</ul>
+			</li>
+			<li class = "nav-dropdown">
+				<a class = "nav-header" href = "#troposphere"> Troposphere </a>
+				<ul class = "nav-sub">
+					<li> Weather </li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- 
+		===================================================================================
+		==================================== EXOSPHERE ====================================
+		===================================================================================
+	-->
+	<div id = "exosphere" class = "exosphere">
+		<div id = "apply-stars"></div>
+
+		<div class = "double-box">
+			<div class = "left-box">
+				<div class = "header">
+					<h1>Hi, I'm Matt <br><span id = "name"></span></h1>
+				</div>
+
+				<div class = "subheader">
+					and welcome to the <span class = "highlight">Exosphere</span>
+				</div>
+			</div>
+
+			<div>
+				
+			</div>
+
+
+		</div>
+	</div>
+
+	<!-- 
+		======================================================================================
+		==================================== THERMOSPHERE ====================================
+		======================================================================================
+	-->
+
+	<div id = "thermosphere" class = "thermosphere">
+		<div class = "double-box">
+			<div class = "left-box">
+				<div class = "header">
+					<h1>About Me</h1>
+				</div>
+
+				<div class = "subheader">
+					Welcome to the <span class = "highlight">Thermosphere</span>
+				</div>
+			</div>
+
+			<div class = "right-box">
+				<div class = "slide-thermo">
+					<div class = "slide-thermo-header">
+						Web Developer
+					</div>
+					<div class = "slide-thermo-description">
+						I'm an individual that thrives in passion and learning something new. Every day, the goal is to become the best version of myself. I strive to build projects with code that is efficent, functional, and simple as possible while having fun with it!
+					</div>
+				</div>
+
+				<div class = "slide-thermo">
+					<div class = "slide-thermo-header">
+						Weather Enthusiast
+					</div>
+					<div class = "slide-thermo-description">
+						We live in an extremely dynamic and ever-changing world that continuously surprises me. As with web development, weather is never a subject to stop learning. There will always be a new discovery, new pheonomenon to study, new ways of better understanding how the world functions. Weather always happens for a reason, and I want to know why. 
+					</div>
+				</div>
+
+				<div class = "slide-thermo">
+					<div class = "slide-thermo-header">
+						Dancer
+					</div>
+					<div class = "slide-thermo-description">
+						Dancing was never my forte. I grew up in the west surburbs of Chicago, but it was only until I left for college that I realize what I've been missing. Chicago is rich in history and culture, especially in terms of music. Shuffling, house dance, Chicago footwork, the music of house, the music of techno. The combination of dancing and music is euphoric to me. I let my feet do the talking to define my individuality.
+					</div>
+				</div>
+
+				<div class = "slide-thermo">
+					<div class = "slide-thermo-header">
+						Dancer
+					</div>
+					<div class = "slide-thermo-description">
+						Dancing was never my forte. I grew up in the west surburbs of Chicago, but it was only until I left for college that I realize what I've been missing. Chicago is rich in history and culture, especially in terms of music. Shuffling, house dance, Chicago footwork, the music of house, the music of techno. The combination of dancing and music is euphoric to me. I let my feet do the talking to define my individuality.
+					</div>
+				</div>
+
+				<div class = "slide-thermo">
+					<div class = "slide-thermo-header">
+						Guild Wars 2
+					</div>
+					<div class = "slide-thermo-description">
+						Guild Wars 2 is one of the most popular MMORPGs (massive multiplayer online role playing game) in the gaming industy since it's 2012 debut. Guild Wars 2 is my passion because I can escape reality while still having great social interactions. I've been leading guilds/communities of hundreds of players since I was 17 and still going strong today! The game has not only taught me how to have fun in a game, but it has taught me how to be strong leader, teacher, and speaker.
+					</div>
+				</div>
+
+				<div class = "slide-selectors" onclick = "nextSlide(1);">
+					&#187;
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 
+		====================================================================================
+		==================================== MESOSPHERE ====================================
+		====================================================================================
+	-->
+
+	<div id = "mesosphere" class = "mesosphere">
+		<div class = "double-box">
+			<div class = "left-box">
+				<div class = "header">
+					<h1>Projects</h1>
+				</div>
+
+				<div class = "subheader">
+					Welcome to the <span class = "highlight">Mesosphere</span>
+				</div>
+			</div>
+
+			<div class = "right-box">
+			</div>
+		</div>
+	</div>
+
+	<!-- 
+		======================================================================================
+		==================================== STRATOSPHERE ====================================
+		======================================================================================
+	-->
+
+	<div id = "stratosphere" class = "stratosphere">
+		<div class = "double-box">
+			<div class = "left-box">
+				<div class = "header">
+					<h1>Let's work together!</h1>
+				</div>
+
+				<div class = "subheader">
+					Welcome to the <span class = "highlight">Stratosphere</span>
+				</div>
+			</div>
+
+			<div class = "right-box">
+			</div>
+		</div>
+	</div>
+	<!-- 
+		==================================================================================
+		==================================== TROPOSPHERE =================================
+		==================================================================================
+	-->
+	<div id = "sky" class = "troposphere">
+		<div id = "tropo-subheader" class = "subheader">
+			Welcome to the <span id = "tropo-highlight" class = "highlight">Troposphere</span>
+		</div>
+
 		<div id = "apply-big-clouds"></div>
 		<div id = "apply-small-clouds"></div>
 		<div id = "apply-rain"></div>
@@ -33,7 +221,6 @@
 				<span></span>
 			</div>
 		</div>
-		<div id = "apply-stars"></div>
 		<div id = "apply-tree">
 			<div class = "tree">
 
@@ -98,9 +285,7 @@
 
 		<div class = "page-box">
 			<div class = "main-box">
-				<div>
-					<h1 class = "name">Hi, I'm <br>Matt <span id = "name"></span></h1>
-				</div>
+				
 
 				<!-- Input box for weather fun -->
 				<div class = "weather-box">
@@ -303,15 +488,6 @@
 		</div> <!-- End of contact me -->
 	</div> <!-- End of ground -->
 </body>
-<script id = "js-main" type = "text/javascript" src = "./weather.js"></script>
+<script type = "text/javascript" src = "<?php echo $base;?>/weather.js?v=<?php echo $date;?>"></script>
 <script> getWeather('cityInput'); </script>
-
-<!-- VERSIONING --> 
-<script> 
-	var css_main = "./styles.css?v='" + document.lastModified + "'",
-		js_main = "./weather.js?v='" + document.lastModified +"'";
-
-	document.getElementById('css-main').href = css_main;
-	document.getElementById('js-main').src = js_main; 
-</script>
 </html

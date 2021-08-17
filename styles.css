@@ -1,10 +1,4 @@
-/*
-html5doctor.com Reset Stylesheet
-v1.6.1
-Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com
-Twitter: @rich_clark
-*/
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -37,6 +31,8 @@ html,body
 }
 
 body {
+    font-family: 'Patua One', cursive;
+    background: #DDDFDA;
     line-height:1;
 }
 
@@ -66,6 +62,7 @@ a {
     vertical-align:baseline;
     background:transparent;
     text-decoration: none;
+    color: var(--link-color);
 }
 
 /* change colours to suit your needs */
@@ -110,23 +107,16 @@ hr {
 input, select {
     vertical-align:middle;
 }
-
-/*  ============================
-    ===== Start of my code =====
-    ============================
-*/
 /* The main box where all the content will be limited too */
-body{
-    background: #DDDFDA;
-    font-family: Helvetica;
-}
 /*
     =====================
     ===== Variables =====
     =====================
 */
 :root{
+    --link-color: #D9D6D9; /* Light gray */
     --sky-bkg-color: #D9DEE1; /* Light gray */
+    --highlight-text: #D9D6D9; /* LIght gray */
 
     --grass: #51AA0D; /* Light green */
 
@@ -159,15 +149,48 @@ body{
     width: 30%;
     vertical-align: middle;
 }
-.sky{
-    background: linear-gradient(#4D98EC, #B1D2F5); /* Light blue to blue */
+/*
+    =======================
+    ===== ATMOSPHERES =====
+    =======================
+    Split to each atmosphere are major sections
+*/
+.exosphere,
+.thermosphere,
+.mesosphere,
+.stratosphere{
+    height: 100vh;
+    position: relative;
+}
+
+.exosphere{
+    height: 100vh;
+    background: linear-gradient(#000000, #0F1B4D); /* Black -> Dark blue */
+}
+.highlight{
+    color: var(--highlight-text);
+}
+.thermosphere{
+    height: 100vh;
+    background: linear-gradient(#0F1B4D, #1E4873); /* Dark blue -> Dark (but lighter) blue */
+}
+.mesosphere{
+    height: 100vh;
+    background: linear-gradient(#1E4873, #4190A6); /* Darkish blue -> Turquoise */
+}
+.stratosphere{
+    height: 100vh;
+    background: linear-gradient(#4190A6, #4D98EC);
+}
+.troposphere{
+    background: linear-gradient(#4D98EC, #B1D2F5); /* Blue -> Light blue */
     height: 90vh;
     position: relative; /* stop abolute elements from going beyond 100 on screen */
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
 }
 @media only screen and (max-width: 600px){
-    .sky{
+    .troposphere{
         height: 150vh;
     }
 }
@@ -245,16 +268,156 @@ body{
         width: 15%;
     }
 }
-
-.name{
-    font-size: clamp(4rem, 6vw, 6rem);
+/*
+    ======================
+    ===== NAVIGATION =====
+    ======================
+*/
+.nav-container{
+    position: relative;
+}
+.nav-bar{
+    position: fixed;
+    height: 100vh;
+    width: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: white;
+    z-index: 2000;
+    border-right: 2px solid #D28D15;
+}
+/* List of atmospheres */
+.nav-header{
+    font-size: clamp(1.2rem, 1.2vw, 2rem);
+    width: 100%;
+    transform: rotate(-90deg);
+}
+.nav-dropdown{
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+}
+.nav-sub{
+    display: none;
+    list-style-type: none;
+    white-space: nowrap;
+    font-size: clamp(1.5rem, 1vw, 3rem);
+    padding-left: 20px;
+    padding-bottom: 50px;
+    background-color: black;
+}
+@media only screen and (max-width: 600px){
+    .nav-bar{
+        width: 30px;
+    }
+}
+/*
+    =====================================
+    ===== DOUBLE, LEFT, RIGHT BOXES =====
+    =====================================
+*/
+/* Box to allow two large divs together */ 
+.double-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+/* For side by side view */
+.double-box > div{
+    width: 45%;
+}
+/* Mainly for descriptions */ 
+.right-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+/* For up and down view */
+@media only screen and (max-width: 600px){
+    .double-box{
+        align-items: center;
+        flex-direction: column;
+    }
+    .double-box > div{
+        width: 70%;
+    }
 }
 
+.header{
+    color: #D28D15;
+    font-size: clamp(4rem, 6vw, 6rem);
+    padding-bottom: 50px;
+    text-align: center;
+}
+.subheader{
+    color: #D28D15;
+    font-size: clamp(1.5rem, 2vw, 3rem);
+    padding-bottom: 50px;
+    text-align: center;
+}
+.subheader{
+    top: 85%;
+    left: 10%;
+}
+#meso-subheader{
+    color: #F09909;
+}
+#strato-subheader{
+    color: #F09909;
+}
+#tropo-subheader{
+    color: #BE7314;
+}
+#tropo-highlight{
+    color: #3167A4;
+}
+.sub-description{
+    font-size: 18px;
+    padding: 5px;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    color: #C3C3C3;
+}
 @media only screen and (max-width: 600px){
     .main-box h1,
-    .name{
-        font-size: 40px;
+    .header{
+        font-size: 60px;
     }
+}
+/*
+    ===================
+    ===== SLIDERS =====
+    ===================
+    This is to split between atmospheres
+*/
+.slide-thermo-header{
+    color: #D28D15;
+    font-size: clamp(1.5rem, 2vw, 3rem);
+    padding-bottom: 50px;
+    text-align: center;
+}
+.slide-thermo-description{
+    font-size: 18px;
+    padding: 5px;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.3;
+    color: #C3C3C3;
+}
+.slide-selectors{
+    width: 25px;
+    font-size: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    cursor: pointer;
 }
 /*
     ============================

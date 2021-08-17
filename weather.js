@@ -286,7 +286,6 @@ function defaults(){
 	removeWeather(bigCloudsDiv);
 	removeWeather(smallCloudsDiv);
 	removeWeather(rainDiv);
-	removeWeather(starDiv);
 }
 // No clouds, just the pretty sky
 function clearSkies(){
@@ -311,7 +310,6 @@ function day(){
 }
 // Settings for night
 function night(){ 
-	stars();
 	setTimeout(function(){
 		sunDiv.style.opacity = 0;
 		moonDiv.style.opacity = 1;
@@ -436,6 +434,7 @@ function rain(type){
 }
 
 function stars(){
+	console.log("stars")
 	html = '';
 	if (mobileWidth.matches) randomNum = getRandomNumberInRange(5, 10);
 	else randomNum = getRandomNumberInRange(10, 50); // # of stars
@@ -452,6 +451,7 @@ function stars(){
 		starDiv.innerHTML = html; 
 	}
 }
+stars();
 
 function rocks(){
 	randomNum = getRandomNumberInRange(50, 100); // # of rocks
@@ -859,4 +859,24 @@ setTimeout(() => {
 	//loadingScreen.style.height = 0;
 }, 2000);
 
+var slideIndex = 1; 
+showSlides(slideIndex);
 
+function nextSlide(num){
+	showSlides(slideIndex += num);
+}
+
+function showSlides(num){
+	var slides = document.getElementsByClassName('slide-thermo');
+
+	if (num > slides.length){
+		slideIndex = 1;
+	}
+	if (num < 1){
+		slideIndex = slides.length;
+	}
+	for (i = 0; i < slides.length; i++) {
+     	slides[i].style.display = "none";  
+  	}
+	slides[slideIndex - 1].style.display = "block";
+}
