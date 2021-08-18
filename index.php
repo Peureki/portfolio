@@ -97,47 +97,47 @@
 			</div>
 
 			<div class = "right-box">
-				<div class = "slide-thermo">
-					<div class = "slide-thermo-header">
+				<div class = "slides-thermo">
+					<div class = "slides-header">
 						Web Developer
 					</div>
-					<div class = "slide-thermo-description">
+					<div class = "slides-description">
 						I'm an individual that thrives in passion and learning something new. Every day, the goal is to become the best version of myself. I strive to build projects with code that is efficent, functional, and simple as possible while having fun with it!
 					</div>
 				</div>
 
-				<div class = "slide-thermo">
-					<div class = "slide-thermo-header">
+				<div class = "slides-thermo">
+					<div class = "slides-header">
 						Weather Enthusiast
 					</div>
-					<div class = "slide-thermo-description">
+					<div class = "slides-description">
 						We live in an extremely dynamic and ever-changing world that continuously surprises me. As with web development, weather is never a subject to stop learning. There will always be a new discovery, new pheonomenon to study, new ways of better understanding how the world functions. Weather always happens for a reason, and I want to know why. 
 					</div>
 				</div>
 
-				<div class = "slide-thermo">
-					<div class = "slide-thermo-header">
+				<div class = "slides-thermo">
+					<div class = "slides-header">
 						Dancer
 					</div>
-					<div class = "slide-thermo-description">
+					<div class = "slides-description">
 						Dancing was never my forte. I grew up in the west surburbs of Chicago, but it was only until I left for college that I realize what I've been missing. Chicago is rich in history and culture, especially in terms of music. Shuffling, house dance, Chicago footwork, the music of house, the music of techno. The combination of dancing and music is euphoric to me. I let my feet do the talking to define my individuality.
 					</div>
 				</div>
 
-				<div class = "slide-thermo">
-					<div class = "slide-thermo-header">
+				<div class = "slides-thermo">
+					<div class = "slides-header">
 						Dancer
 					</div>
-					<div class = "slide-thermo-description">
+					<div class = "slides-description">
 						Dancing was never my forte. I grew up in the west surburbs of Chicago, but it was only until I left for college that I realize what I've been missing. Chicago is rich in history and culture, especially in terms of music. Shuffling, house dance, Chicago footwork, the music of house, the music of techno. The combination of dancing and music is euphoric to me. I let my feet do the talking to define my individuality.
 					</div>
 				</div>
 
-				<div class = "slide-thermo">
-					<div class = "slide-thermo-header">
+				<div class = "slides-thermo">
+					<div class = "slides-header">
 						Guild Wars 2
 					</div>
-					<div class = "slide-thermo-description">
+					<div class = "slides-description">
 						Guild Wars 2 is one of the most popular MMORPGs (massive multiplayer online role playing game) in the gaming industy since it's 2012 debut. Guild Wars 2 is my passion because I can escape reality while still having great social interactions. I've been leading guilds/communities of hundreds of players since I was 17 and still going strong today! The game has not only taught me how to have fun in a game, but it has taught me how to be strong leader, teacher, and speaker.
 					</div>
 				</div>
@@ -168,6 +168,22 @@
 			</div>
 
 			<div class = "right-box">
+				<div class = "slides-meso">
+					<div class = "slides-header">
+						<u>Peuresearchcenter.com</u>
+						<br>
+						<img src = "./images/github.png">
+					</div>
+					<div class = "slides-subheader">
+						HTML, CSS, Vanilla JS, PHP, Guild War 2's API, Google App Script
+					</div>
+					<div class = "slides-description">
+						The website to provide tools, services, and information for players of Guild Wars 2 to earn gold (in-game currency) and better their quality of life. Currently it services hundreds of unique players weekly and I update it frequently as the game evolves.
+					</div>
+					<div class = "slides-img">
+						<img src = "./images/peu-choya.png">
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

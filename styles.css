@@ -320,8 +320,8 @@ input, select {
 /* Box to allow two large divs together */ 
 .double-box{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     height: 100%;
 }
 /* For side by side view */
@@ -334,7 +334,7 @@ input, select {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 50px;
+    padding-top: 10px;
 }
 /* For up and down view */
 @media only screen and (max-width: 600px){
@@ -395,13 +395,25 @@ input, select {
     ===================
     This is to split between atmospheres
 */
-.slide-thermo-header{
+.slides-header{
     color: #D28D15;
     font-size: clamp(1.5rem, 2vw, 3rem);
-    padding-bottom: 50px;
     text-align: center;
 }
-.slide-thermo-description{
+/* For github or external links */
+.slides-header img{
+    width: 50px;
+    height: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+/* For very small descriptions such as listing skillset */
+.slides-subheader{
+    font-size: 20px;
+    text-align: center;
+    color: #D7CA15; /* Yellow */
+}
+.slides-description{
     font-size: 20px;
     padding: 5px;
     text-align: justify;
@@ -418,6 +430,12 @@ input, select {
     padding-bottom: 10px;
     text-align: center;
     cursor: pointer;
+}
+.slides-img img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 /*
     ============================

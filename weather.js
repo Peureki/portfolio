@@ -867,7 +867,7 @@ function nextSlide(num){
 }
 
 function showSlides(num){
-	var slides = document.getElementsByClassName('slide-thermo');
+	var slides = document.getElementsByClassName('slides-thermo');
 
 	if (num > slides.length){
 		slideIndex = 1;
