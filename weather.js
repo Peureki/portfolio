@@ -5,12 +5,17 @@ var body = document.body,
 	bigCloudsDiv = document.getElementById('apply-big-clouds'),
 	loadingScreen = document.getElementById('loading-screen'),
 	moonDiv = document.getElementById('moon'),
-	rockDiv = document.getElementById('apply-rock'),
-	skyDiv = document.getElementById('sky'),
 	smallCloudsDiv = document.getElementById('apply-small-clouds'),
 	sunDiv = document.getElementById('sun'),
 	starDiv = document.getElementById('apply-stars'),
 	weatherIcon = document.getElementById('weather-icon');
+
+// ATMOSPHERES
+var exoDiv = document.getElementById('exosphere'),
+	thermoDiv = document.getElementById('thermosphere'),
+	mesoDiv = document.getElementById('mesosphere'),
+	stratoDiv = document.getElementById('stratosphere'),
+	tropoDiv = document.getElementById('troposphere');
 
 // Mobile width 
 var mobileWidth = window.matchMedia("(max-width: 600px)");
@@ -42,6 +47,13 @@ var cssVar = (name, value) => {
 cssVar('no-bkg-text-color'); // Ex: Hi, I'm Merp
 cssVar('desc-border-color'); // Border around desc boxes
 cssVar('desc-text-color'); // text1 inside desc boxes
+
+// ATMOSPHERE BKG VARIABLES
+cssVar('exo-bkg-color');
+cssVar('thermo-bkg-color');
+cssVar('meso-bkg-color');
+cssVar('strato-bkg-color');
+cssVar('tropo-bkg-color');
 
 // Other variables 
 var randomNum,
@@ -291,8 +303,6 @@ function defaults(){
 function clearSkies(){
 	defaults();
 	weatherIcon.className = "wi wi-day-sunny";
-	skyDiv.style.background = 'linear-gradient(#4D98EC, #B1D2F5)'; // Light blue background
-
 }
 // Settings for day
 function day(){
@@ -303,10 +313,16 @@ function day(){
 	}, 1000); */
 	sunDiv.style.opacity = 1;
 	moonDiv.style.opacity = 0;
-	skyDiv.style.background = 'linear-gradient(#4D98EC, #B1D2F5)'; // Light blue background
 	cssVar('no-bkg-text-color', 'black');
 	cssVar('desc-border-color', 'white');
 	cssVar('desc-text-color', 'black');
+
+	// Atmosphere bkg colors 
+	cssVar('exo-bkg-color', 'linear-gradient(#000000, #0F1B4D)');
+	cssVar('thermo-bkg-color', 'linear-gradient(#0F1B4D, #1E4873)');
+	cssVar('meso-bkg-color', 'linear-gradient(#1E4873, #4190A6)');
+	cssVar('strato-bkg-color', 'linear-gradient(#4190A6, #4D98EC)');
+	cssVar('tropo-bkg-color', 'linear-gradient(#4D98EC, #B1D2F5)');
 }
 // Settings for night
 function night(){ 
@@ -314,11 +330,17 @@ function night(){
 		sunDiv.style.opacity = 0;
 		moonDiv.style.opacity = 1;
 	}, 1000);
-	skyDiv.style.background = '#141414';
 	// Change colors of texts
 	cssVar('no-bkg-text-color', '#D28D15'); // Header, title texts
 	cssVar('desc-border-color', '#D28D15');
 	cssVar('desc-text-color', 'white');
+
+	// Atmosphere bkg colors 
+	cssVar('exo-bkg-color', 'linear-gradient(#000000, #050919)');
+	cssVar('thermo-bkg-color', 'linear-gradient(#050919, #080F2A)');
+	cssVar('meso-bkg-color', 'linear-gradient(#080F2A, #0B143A)');
+	cssVar('strato-bkg-color', 'linear-gradient(#0B143A, #0F1B4D)');
+	cssVar('tropo-bkg-color', 'linear-gradient(#0F1B4D, #142550)');
 }
 function clouds(cloudPercent){
 	defaults();
@@ -368,7 +390,7 @@ function clouds(cloudPercent){
 }
 function rain(type){
 	defaults();
-	skyDiv.style.background = '#B5B6B2'; // Light gray background
+	tropoDiv.style.background = '#B5B6B2'; // Light gray background
 	sunDiv.style.opacity = 0;
 
 	// Change amount of precip or type depending on the type given
@@ -453,24 +475,6 @@ function stars(){
 }
 stars();
 
-function rocks(){
-	randomNum = getRandomNumberInRange(50, 100); // # of rocks
-	for (i = 0; i < randomNum; i++){
-		topPosition = getRandomNumberInRange(20,80);
-		leftPosition = getRandomNumberInRange(-100,200);
-		rotateDeg = getRandomNumberInRange(-360, 360);
-		html += `
-			<div class = "rock" style = "top: ${topPosition}%; left: ${leftPosition}%; transform: rotate(${rotateDeg}deg);">
-				<img src = "./images/rock-${Math.round(getRandomNumberInRange(1,5))}.svg">
-			</div>
-		`;
-		rockDiv.innerHTML = html;
-	}
-	
-} 
-
-rocks(); 
-
 // Format the time to display in days, hours, minutes, and seconds
 // Parameters: time, HTML IDs of days, hours, mins, seconds
 function formatTime(result_time, hours, minutes, seconds){
@@ -504,117 +508,6 @@ function formatTime(result_time, hours, minutes, seconds){
 // Smoke
 // Haze
 
-// About me 
-var passionWebDev = document.getElementById('passion-web-dev'),
-	w600 = window.matchMedia("(max-width: 600px)");
-var passionHeader = [
-	, // Empty
-	document.getElementById('passion-header-1'),
-	document.getElementById('passion-header-2'),
-	document.getElementById('passion-header-3'),
-	document.getElementById('passion-header-4'),
-];
-
-// List all passion descriptions
-var passionSectiona = [
-	, // Empty
-	document.getElementById('web-dev'),
-	document.getElementById('weather-enth'),
-	document.getElementById('dances'),
-	document.getElementById('gw2'),
-];
-// Lists all peuresearchcenter sections 
-var peuDesc = document.getElementsByClassName('project-desc')[0],
-	peuHeaders = new Array;
-	peuSections = new Array; 
-
-for (i = 0; i < peuDesc.children.length; i++){
-	peuSections[i] = peuDesc.children[i]; 
-} 	
-
-// Shows the desc when clicking on a header
-function showDesc(num){
-	switch (num){
-		case 1: 
-			setOthers(num);
-			break;
-		case 2: 
-			setOthers(num);
-			break;
-		case 3:
-			setOthers(num);
-			break;
-		case 4:
-			setOthers(num);
-			break;
-	}
-	// Depending on which passion it is, go through the passion array
-	// and set each to 0 except the one that is selected
-	function setOthers(num){
-		for (i = 1; i < passionSectiona.length; i++){
-			if (i == num){
-				passionHeader[i].style.color = "#51AA0D"; // Light green
-				passionHeader[i].style.borderLeftColor = "#51AA0D";
-				passionSectiona[i].style.opacity = 1;
-			} else {
-				passionHeader[i].style.color = "#CBC8C3"; // Light gray
-				passionHeader[i].style.borderLeftColor = "#CBC8C3";
-				passionSectiona[i].style.opacity = 0;
-			}
-		}
-	}
-}
-// Default to show the first on load
-showDesc(1);
-
-function showSection(header, num){
-	switch (num){
-		case 0: 
-			setOthers(header, num);
-			break;
-		case 1: 
-			setOthers(header, num);
-			break;
-		case 2:
-			setOthers(header, num);
-			break;
-		case 3:
-			setOthers(header, num);
-			break;
-		case 4:
-			setOthers(header, num);
-			break;
-		case 5:
-			setOthers(header, num);
-			break;
-	}
-
-	function setOthers(header, num){
-		for (i = 0; i < header.parentNode.children.length; i++){
-			if (i == num){
-				header.style.color = "#51AA0D"; // Light green
-				header.style.borderLeftColor = "#51AA0D";
-				peuSections[i].style.opacity = 1;
-			} else {
-				header.parentNode.children[i].style.color = "#CBC8C3"; // Light gray
-				header.parentNode.children[i].style.borderLeftColor = "#CBC8C3";
-				peuSections[i].style.opacity = 0;
-			}
-		}
-	}
-}
-showSection(document.getElementsByClassName('project-timeline-header')[0], 0);
-
-var passionSectionaHeight = document.getElementsByClassName('passion-desc');
-passionSectionaHeight[0].style.height = passionSectiona[4].offsetHeight + "px";
-window.onresize = function(){
-	passionSectionaHeight[0].style.height = passionSectiona[4].offsetHeight + "px";
-}
-// Animation for scrolling
-var passions = document.getElementById('passions'),
-	passionDesc = document.getElementById('passion-desc'),
-	projects = document.getElementById('project-timeline'),
-	projectDesc = document.getElementById('project-desc');
 
 // Initiate so that the DOM knows there's some value
 /*
@@ -846,7 +739,7 @@ setTimeout(typeWriter, 1000);
 
 var tree = document.getElementById('apply-tree'), 
 	cityInput = document.getElementById('cityInput'),
-	sky = document.getElementById('sky');
+	sky = document.getElementById('troposphere');
 
 // If city focus -> remove tree on mobile
 cityInput.addEventListener('focus', function() {
@@ -854,11 +747,11 @@ cityInput.addEventListener('focus', function() {
 	else tree.style.opacity = 1;
 });
 cityInput.addEventListener('focusout', () => tree.style.opacity = 1);
-
-setTimeout(() => {
-	//loadingScreen.style.height = 0;
-}, 2000);
-
+/* 
+	=====================================
+	============== SLIDES ===============
+	=====================================
+*/
 var slideIndex = 1; 
 showSlides(slideIndex);
 
@@ -868,7 +761,7 @@ function nextSlide(num){
 
 function showSlides(num){
 	var slides = document.getElementsByClassName('slides-thermo');
-
+	// When slides are less than the length of all of them, reset it back to the first
 	if (num > slides.length){
 		slideIndex = 1;
 	}
