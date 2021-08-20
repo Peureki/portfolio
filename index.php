@@ -58,8 +58,9 @@
 	-->
 	<div id = "exosphere" class = "exosphere">
 		<div id = "apply-stars"></div>
+		<img id = "satellite" src = "./images/satellite.png">
 
-		<div class = "double-box">
+		<div class = "exo-double-box">
 			<div class = "left-box">
 				<div class = "header">
 					<h1>Hi, I'm Matt <br><span id = "name"></span></h1>
@@ -70,9 +71,6 @@
 				</div>
 			</div>
 
-			<div>
-				
-			</div>
 
 
 		</div>
@@ -85,6 +83,23 @@
 	-->
 
 	<div id = "thermosphere" class = "thermosphere">
+		<div class = "aurora-box">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<!-- Lines going through the aurora with same background as the default -->
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+
 		<div class = "double-box">
 			<div class = "left-box">
 				<div class = "header">
@@ -156,6 +171,18 @@
 	-->
 
 	<div id = "mesosphere" class = "mesosphere">
+		<div class = "meteor-box">
+			<img src = "./images/rock-1.svg">
+
+			<!-- Circle on the rock -->
+			<span></span>
+			<!-- Trail -->
+			<span></span>
+		</div>
+
+
+
+
 		<div class = "double-box">
 			<div class = "left-box">
 				<div class = "header">
@@ -171,8 +198,7 @@
 				<div class = "slides-meso">
 					<div class = "slides-header">
 						<u>Peuresearchcenter.com</u>
-						<br>
-						<img src = "./images/github.png">
+						<a href = "https://github.com/Peureki/peuresearchcenter" target = "_blank"><img src = "./images/github.png"></a>
 					</div>
 					<div class = "slides-subheader">
 						HTML, CSS, Vanilla JS, PHP, Guild War 2's API, Google App Script
@@ -195,6 +221,14 @@
 	-->
 
 	<div id = "stratosphere" class = "stratosphere">
+		<div id = "rocket-box" class = "rocket-box">
+			<img id = "rocket" src = "./images/rocket.png">
+			<!-- Flames -->
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		
 		<div class = "double-box">
 			<div class = "left-box">
 				<div class = "header">
@@ -207,6 +241,15 @@
 			</div>
 
 			<div class = "right-box">
+				<div id = "contact" class = "contact-me">
+					<form class = "contact-form" action = "contactform.php" method = "post">
+						<input type="text" name = "name" placeholder="Name or Company">
+						<input type="text" name="mail" placeholder="E-Mail">
+						<input type="text" name="subject" placeholder="Subject">
+						<textarea type = "textarea" name="message" placeholder="Message"></textarea>
+						<button type="submit" name="submit">Send</button>
+					</form>
+				</div> <!-- End of contact me -->
 			</div>
 		</div>
 	</div>
