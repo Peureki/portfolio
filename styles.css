@@ -1056,7 +1056,7 @@ Colors
 .contact-me form textarea{
     width: 100%;
     font-size: 17px;
-    height: 250px;
+    height: 150px;
 }
 /* Submit button */
 .contact-me form button{
@@ -1348,8 +1348,8 @@ Colors
     animation: top_to_bottom 1.5s linear infinite;
 }
 @keyframes top_to_bottom{
-    0% {top: -10%; opacity: 1;}
-    100% {top: 120%; opacity: 1;}
+    0% {top: 0%; opacity: 1;}
+    100% {top: 100%; opacity: 1;}
 }
 
 /*
