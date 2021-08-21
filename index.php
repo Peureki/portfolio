@@ -234,6 +234,7 @@
 					<span class = "align-left">Email: </span><span class = "align-right"><a href = "mailto: newyenmatt@gmail.com"><u>newyenmatt@gmail.com</u></a></span>
 					<br><span class = "align-left">LinkedIn: </span><span class = "align-right"><a href = "https://www.linkedin.com/in/mattnewyen/" target = "_blank"><u>/in/mattnewyen/</u></a></span>
 					<br><span class = "align-left">GitHub: </span><span class = "align-right"><a href = "https://github.com/Peureki" target = "_blank"><u>/Peureki</u></a></span>
+					<br><span class = "align-left">Resume: </span><span class = "align-right"><a href = "./images/Matt_Nguyen_Resume.pdf" target = "_blank"><u>PDF</u></a></span>
 					<div style = "clear: both;"></div>
 				</div>
 
@@ -378,11 +379,11 @@
 			</div> <!-- End of main box -->
 
 			<div class = "right-box" style = "border: none;">
-				<div class = "header">
+				<div id = "tropo-header" class = "header">
 					Troposphere
 				</div>
 
-				<div class = "subdescription">
+				<div id = "tropo-description" class = "subdescription">
 					This is the layer of the atmosphere that we live and breathe in! All weather occurs here.
 				</div>
 			</div>

@@ -343,7 +343,9 @@ function day(){
 
 	// Atmosphere other variables
 	cssVar('tropo-text-color', 'black');
-	console.log('its day time')
+	
+	// Change colors of nav bar when scrolling to tropo
+	body.addEventListener('scroll', doTropoNavColorChange);
 }
 // Settings for night
 function night(){ 
@@ -365,6 +367,13 @@ function night(){
 
 	// Atmosphere other variables
 	cssVar('tropo-text-color', '#D9D6D9');
+
+	// Change colors of nav bar when scrolling to tropo
+	body.removeEventListener('scroll', doTropoNavColorChange);
+	// Case: if it's black when it turns into night time, make nav headers white anyway
+	for (i = 0; i < navHeader.length; i++){
+		navHeader[i].style.color = "#D9D6D9";
+	}
 }
 function clouds(cloudPercent){
 	defaults();
@@ -595,6 +604,36 @@ function formatTime(result_time, hours, minutes, seconds){
 // Smoke
 // Haze
 
+var tropoHeader = document.getElementById('tropo-header'),
+	navHeader = document.getElementsByClassName('nav-header');
+
+function tropoNavColorChange(){
+	// Get value of where the header is located
+	var headerPos = tropoHeader.getBoundingClientRect(); 
+	// If the header of the tropo top value is 1000 (about when the words start showing up on screen)
+	// then change the nav to black, otherwise keep the same
+	if (headerPos.top < 1000){
+		for (i = 0; i < navHeader.length; i++){
+			navHeader[i].style.color = "black";
+		}
+	} else {
+		for (i = 0; i < navHeader.length; i++){
+			navHeader[i].style.color = "#D9D6D9";
+		}
+	}
+}
+//Throttle the scroll so that it does go off every scroll
+// This reduces the lag, esp on mobile
+function throttle(fn, delay){
+	var time = Date.now(); 
+	return function(){
+		if ((time + delay - Date.now()) < 0){
+			fn();
+			time = Date.now();
+		}
+	}
+}
+var doTropoNavColorChange = throttle(tropoNavColorChange, 300);
 
 // Initiate so that the DOM knows there's some value
 /*
@@ -696,18 +735,8 @@ function scrollAnimation(){
    		}
    	}
 }
-
-// Throttle the scroll so that it does go off every scroll
-function throttle(fn, delay){
-	var time = Date.now(); 
-	return function(){
-		if ((time + delay - Date.now()) < 0){
-			fn();
-			time = Date.now();
-		}
-	}
-}
 */
+
 /*
 var text1 = "(New-Yen)",
 	text2 = "(New-Gen)",

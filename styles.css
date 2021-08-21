@@ -412,9 +412,11 @@ Colors
 .weather-balloon-box img{
     width: 30%;
 }
-
-
-
+/*
+    ========================
+    ===== STRATOSPHERE =====
+    ========================
+*/
 .troposphere{
     background: var(--tropo-bkg-color);
     height: 94vh;
@@ -423,6 +425,11 @@ Colors
     transition: all 1s ease;
     z-index: 1004;
 }
+/* Colors specific to the tropo for it to switch when users scroll down (white fades too much into background) */
+#tropo-description{
+    color: var(--tropo-text-color);
+}
+
 @media only screen and (max-width: 600px){
     .thermosphere,
     .mesosphere,
@@ -556,6 +563,8 @@ Colors
     width: 100%;
     transform: rotate(-90deg);
     white-space: nowrap;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 .nav-header:hover{
     color: var(--hover-color);
@@ -656,7 +665,7 @@ Colors
 .sublist{
     color: var(--text-color);
     font-size: clamp(1.5rem, 2vw, 3rem);
-    padding-bottom: 50px;
+    padding-bottom: 10px;
     text-align: center;
 }
 .sublist{
@@ -710,7 +719,6 @@ Colors
     height: 50px;
     vertical-align: middle;
     padding-left: 10px;
-    background-color: white;
 }
 /* For very small descriptions such as listing skillset */
 .slides-subheader{
