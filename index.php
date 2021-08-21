@@ -63,10 +63,14 @@
 		<div class = "exo-double-box">
 			<div class = "right-box" style = "border: none;">
 				<div class = "header">
-					<h1>Hi, I'm Matt <br><span id = "name"></span></h1>
+					<h1>Hi, I'm Matt <br>Nguyen<span id = "name"></span></h1>
 				</div>
 
-				<div class = "subheader">
+				<div class = "subdescription" style = "text-align: center;">
+					(New-Yen), (New-Gen), (Nwin)
+				</div>
+
+				<div class = "subheader" style = "margin-top: 30px;">
 					and welcome to the <span class = "highlight">Exosphere</span>
 				</div>
 
@@ -74,9 +78,6 @@
 					You may find a satellite or two orbiting around
 				</div>
 			</div>
-
-
-
 		</div>
 	</div>
 
@@ -176,13 +177,8 @@
 	-->
 
 	<div id = "mesosphere" class = "mesosphere">
-		<div class = "meteor-box">
-			<img src = "./images/rock-1.svg">
-
-			<!-- Circle on the rock -->
-			<span></span>
-			<!-- Trail -->
-			<span></span>
+		<div id = "apply-meteor">
+			
 		</div>
 
 		<div id = "rocket-box" class = "rocket-box">
@@ -203,7 +199,7 @@
 
 				<div class = "slides-meso">
 					<div class = "slides-header">
-						<a href = "http:s//www.peuresearchcenter.com" target = "_blank"><u>Peuresearchcenter</u></a>
+						<a href = "https://www.peuresearchcenter.com" target = "_blank"><u>Peuresearchcenter</u></a>
 						<a href = "https://github.com/Peureki/peuresearchcenter" target = "_blank"><img src = "./images/github.png"></a>
 					</div>
 					<div class = "slides-subheader">
@@ -237,10 +233,20 @@
 	-->
 
 	<div id = "stratosphere" class = "stratosphere">
+		<div class = "weather-balloon-box">
+			<img src = "./images/weather-balloon.png">
+		</div>
 		<div class = "double-box">
 			<div class = "left-box">
 				<div class = "header">
 					Let's Work Together!
+				</div>
+
+				<div class = "sublist">
+					<span class = "align-left">Email: </span><span class = "align-right"><a href = "mailto: newyenmatt@gmail.com"><u>newyenmatt@gmail.com</u></a></span>
+					<br><span class = "align-left">LinkedIn: </span><span class = "align-right"><a href = "https://www.linkedin.com/in/mattnewyen/" target = "_blank"><u>/in/mattnewyen/</u></a></span>
+					<br><span class = "align-left">GitHub: </span><span class = "align-right"><a href = "https://github.com/Peureki" target = "_blank"><u>/Peureki</u></a></span>
+					<div style = "clear: both;"></div>
 				</div>
 
 				<div id = "contact" class = "contact-me">
@@ -351,7 +357,7 @@
 						<input type = "text" id = "cityInput" placeholder = "Chicago, IL" value = "Chicago, IL"></input>
 						<input type = "button" id = "cityButton" value = "Search" onclick = "getWeather('cityInput')"></input>
 					</div>
-					<h1 id = "cityName"> </h1>
+					<h1 id = "cityName" class = "city-name"> </h1>
 
 					<div class = "weather-info">
 						<div class = "weather-sector">

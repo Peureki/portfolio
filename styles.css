@@ -124,6 +124,7 @@ Colors
 */
 :root{
     --border-color: #D28D15; /* Orange */
+    --hover-color: #D28D15;
     --text-color: #D9D6D9; /* Light gray */
     --link-color: #D9D6D9; /* Light gray */
     --sky-bkg-color: #D9DEE1; /* Light gray */
@@ -142,6 +143,8 @@ Colors
     --meso-bkg-color: linear-gradient(#1E4873, #4190A6); /* Darkish blue -> Turquoise */
     --strato-bkg-color: linear-gradient(#4190A6, #4D98EC); /* Turquoise -> light blue */
     --tropo-bkg-color: linear-gradient(#4D98EC, #B1D2F5); /* Light blue -> very light blue */
+
+    --tropo-text-color: black; /* Changes during day/night */
 
     --no-bkg-text-color: black;
     --desc-border-color: #D28D15; /* orange */
@@ -260,6 +263,11 @@ Colors
     margin: auto;
     z-index: 2;
 }
+@media only screen and (max-width: 600px){
+    .rocket-box{
+        left: 50%;
+    }
+}
 /*
     ========================
     ===== THERMOSPHERE =====
@@ -268,7 +276,7 @@ Colors
 .thermosphere{
     height: 100vh;
     background: var(--thermo-bkg-color);
-    z-index: 1002;
+    z-index: 1005;
 }
 .aurora-box{
     width: 100vw;
@@ -357,7 +365,7 @@ Colors
 .mesosphere{
     height: 100vh;
     background: var(--meso-bkg-color);
-    z-index: 1001;
+    z-index: 1004;
 }
 .meteor-box{
     position: absolute;
@@ -369,7 +377,6 @@ Colors
     opacity: 0;
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
-    animation: topRightToBottomLeft 3s linear infinite;
 }
 .meteor-box img{
     position: absolute;
@@ -426,13 +433,30 @@ Colors
         opacity: 0;
     }
 }
-
+/*
+    ========================
+    ===== STRATOSPHERE =====
+    ========================
+*/
 
 .stratosphere{
     height: 100vh;
     background: var(--strato-bkg-color);
     z-index: 1003;
 }
+.weather-balloon-box{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 60%;
+    animation: downToUp 20s linear infinite;
+}
+.weather-balloon-box img{
+    width: 30%;
+}
+
+
+
 .troposphere{
     background: var(--tropo-bkg-color);
     height: 94vh;
@@ -457,8 +481,16 @@ Colors
 }
 /* Exo - Rocket whole */
 @keyframes downToUp{
-    0% { top: 150%; }
-    100% { top: -50%; }
+    0% { 
+        top: 120%;
+        opacity: 0; 
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { 
+        top: -20%;
+        opacity: 0;
+    }
 }
 /* Exo - Rocket flames */
 @keyframes rocketFlames{
@@ -567,6 +599,11 @@ Colors
     transform: rotate(-90deg);
     white-space: nowrap;
 }
+.nav-header:hover{
+    color: var(--hover-color);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
 .nav-dropdown{
     display: flex;
     align-items: center;
@@ -657,15 +694,15 @@ Colors
     padding-bottom: 50px;
     text-align: center;
 }
-.subheader{
+.subheader,
+.sublist{
     color: var(--text-color);
     font-size: clamp(1.5rem, 2vw, 3rem);
     padding-bottom: 50px;
     text-align: center;
 }
-.subheader{
-    top: 85%;
-    left: 10%;
+.sublist{
+    font-size: clamp(1rem, 1.5vw, 3rem);
 }
 .subdescription{
     color: var(--text-color);
@@ -703,6 +740,11 @@ Colors
     text-align: center;
     padding-bottom: 10px;
     line-height: 1.5;
+}
+.slides-header a:hover{
+    color: var(--hover-color);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 /* For github or external links */
 .slides-header img{
@@ -1018,6 +1060,7 @@ Colors
 .contact-me{
     position: relative;
     text-align: center;
+    width: 90%;
 }
 /* Title */
 .contact-me h1{
@@ -1036,6 +1079,7 @@ Colors
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
+    border: 2px solid var(--border-color);
 }
 /* Full name, email, subject */
 .contact-me form input[type='text']{
@@ -1102,6 +1146,9 @@ Colors
     margin-top: 15px;
     margin-bottom: 15px;
     font-size: 30px;
+}
+.weather-box .city-name{
+    color: var(--tropo-text-color);
 }
 .weather-info{
     display: flex;

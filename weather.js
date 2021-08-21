@@ -4,6 +4,7 @@ var body = document.body,
 	rainDiv = document.getElementById('apply-rain'),
 	bigCloudsDiv = document.getElementById('apply-big-clouds'),
 	loadingScreen = document.getElementById('loading-screen'),
+	meteorDiv = document.getElementById('apply-meteor'),
 	moonDiv = document.getElementById('moon'),
 	smallCloudsDiv = document.getElementById('apply-small-clouds'),
 	sunDiv = document.getElementById('sun'),
@@ -54,6 +55,9 @@ cssVar('thermo-bkg-color');
 cssVar('meso-bkg-color');
 cssVar('strato-bkg-color');
 cssVar('tropo-bkg-color');
+
+// Atmosphere other variables
+cssVar('tropo-text-color');
 
 // Other variables 
 var randomNum,
@@ -323,6 +327,10 @@ function day(){
 	cssVar('meso-bkg-color', 'linear-gradient(#1E4873, #4190A6)');
 	cssVar('strato-bkg-color', 'linear-gradient(#4190A6, #4D98EC)');
 	cssVar('tropo-bkg-color', 'linear-gradient(#4D98EC, #B1D2F5)');
+
+	// Atmosphere other variables
+	cssVar('tropo-text-color', 'black');
+	console.log('its day time')
 }
 // Settings for night
 function night(){ 
@@ -341,6 +349,9 @@ function night(){
 	cssVar('meso-bkg-color', 'linear-gradient(#080F2A, #0B143A)');
 	cssVar('strato-bkg-color', 'linear-gradient(#0B143A, #0F1B4D)');
 	cssVar('tropo-bkg-color', 'linear-gradient(#0F1B4D, #142550)');
+
+	// Atmosphere other variables
+	cssVar('tropo-text-color', '#D9D6D9');
 }
 function clouds(cloudPercent){
 	defaults();
@@ -456,11 +467,10 @@ function rain(type){
 }
 
 function stars(){
-	console.log("stars")
 	html = '';
+	// If mobile, reduce number of stars
 	if (mobileWidth.matches) randomNum = getRandomNumberInRange(5, 10);
 	else randomNum = getRandomNumberInRange(10, 50); // # of stars
-
 	for (i = 0; i < randomNum; i++){
 		html += `
 			<div class = "star" style = "top: ${getRandomNumberInRange(0,40)}%; left: ${getRandomNumberInRange(0,100)}%; animation-delay: ${getRandomNumberInRange(0,5)}s;">
@@ -474,6 +484,70 @@ function stars(){
 	}
 }
 stars();
+
+function meteors(){
+	html = '';
+	var rotation;
+	// Depending on the size of the screen, change the angle of the meteors so they look better
+	if (mobileWidth.matches){
+		rotation = "rotate(-25deg);"
+	} else {
+		rotation = "rotate(25deg);"
+	}
+	randomNum = getRandomNumberInRange(20, 50); // # of meteors
+	for (i = 0; i < randomNum; i++){
+		html += `
+			<div class = "meteor-box" style = "transform: ${rotation}">
+				<img src = "./images/rock-1.svg">
+
+				<!-- Circle on the rock -->
+				<span></span>
+				<!-- Trail -->
+				<span></span>
+			</div>
+		`;
+		meteorDiv.innerHTML = html;
+	}
+	// Animate meteors
+	// Have to make 2nd loop b/c they all need to spawn first
+	var randomTop, randomLeft;
+	
+	for (i = 0; i < meteorDiv.children.length; i++){
+		randomTop = getRandomNumberInRange(0, 80);
+		randomLeft = getRandomNumberInRange(50, 90);
+
+		meteorDiv.children[i].animate([
+			{
+				opacity: 0,
+				top: randomTop + "%",
+				left: randomLeft + "%",
+			},
+			{
+				opacity: 1,
+				top: randomTop + (randomTop*0.10) + "%",
+				left: randomLeft - (randomLeft*0.10) + "%",
+				offset: 0.1,
+			},
+			{
+				opacity: 0,
+				top: randomTop + (randomTop*0.90) + "%",
+				left: randomLeft - (randomLeft*0.90) + "%",
+				offset: 0.90,
+			},
+			{
+				opacity: 0,
+				top: randomTop + randomTop + "%",
+				left: randomLeft - randomLeft + "%",
+				left: "100%",
+			}
+		], {
+			duration: getRandomNumberInRange(10000, 20000),
+			delay: getRandomNumberInRange(0,60000),
+			iterations: Infinity
+		});
+	}
+}
+meteors();
 
 // Format the time to display in days, hours, minutes, and seconds
 // Parameters: time, HTML IDs of days, hours, mins, seconds
@@ -516,6 +590,7 @@ passionDesc.style.right = "-100%";
 projects.style.left = "-100%";
 projectDesc.style.right = "-100%";
 */
+/*
 var groundDiv = document.getElementById('ground');
 // When user scrolls, initite this function to show elements at specific points of an element's top position
 body.addEventListener("scroll", throttle(scrollAnimation, 200));
@@ -619,7 +694,8 @@ function throttle(fn, delay){
 		}
 	}
 }
-
+*/
+/*
 var text1 = "(New-Yen)",
 	text2 = "(New-Gen)",
 	text3 = "(Nwin)",
@@ -642,7 +718,7 @@ function typeWriter(){
 				enterName.innerHTML += text1.charAt(counter);
 				counter++;
 				setTimeout(create1, 50);
-				if (counter == text1.length){
+				if (counter == text1.length-1){
 					counterCheck1 = 1;
 					typeWriter();
 				}
@@ -736,7 +812,7 @@ function typeWriter(){
 	}
 }
 setTimeout(typeWriter, 1000);
-
+*/
 var tree = document.getElementById('apply-tree'), 
 	cityInput = document.getElementById('cityInput'),
 	sky = document.getElementById('troposphere');
