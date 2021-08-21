@@ -24,6 +24,7 @@ html,body
 {
     width: 100%;
     height: 100%;
+    height: calc(var(--vh, 1vh) * 100);
     margin: 0px;
     padding: 0px;
     scroll-behavior: smooth;
@@ -32,6 +33,7 @@ html,body
 
 body {
     font-family: 'Patua One', cursive;
+    position: relative;
     background: #DDDFDA;
     line-height:1;
 }
@@ -280,82 +282,38 @@ Colors
 }
 .aurora-box{
     width: 100vw;
-    height: 1000px;
+    height: 100vh;
 }
-.aurora-box span{
+.aurora-box img{
     position: absolute;
-    width: 100%;
-    filter: blur(80px);
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 40%;
+    animation: smallMovement 10s linear infinite;
 }
-/* Layers of the aurora */
-.aurora-box span:nth-child(1){
-    height: 5%;
-    top: 20%;
-    background-color: #3E474C; /* Gray with a hint of blue */
-    animation: expandHeight 5s ease infinite;
+@keyframes smallMovement{
+    0% { 
+        opacity: 1;
+    }
+    50% { 
+        opacity: 0.5;
+    }
+    100% { 
+        opacity: 1; 
+    }
 }
-.aurora-box span:nth-child(2){
-    height: 5%;
-    top: 30%;
-    background-color: #B18FB3; /* Light pink */
-    animation: expandHeight 5s ease 1s infinite;
+@media only screen and (max-width: 3000px){
+    .aurora-box img{
+        width: 40%;
+    }
 }
-.aurora-box span:nth-child(3){
-    height: 5%;
-    top: 40%;
-    background-color: #C074CB; /* Dark pink */
-    animation: expandHeight 5s ease 5s infinite;
-}
-.aurora-box span:nth-child(4){
-    height: 5%;
-    top: 50%;
-    background-color: #BACBC9; /* Very light green */
-    animation: expandHeight 5s ease 4s infinite;
-}
-.aurora-box span:nth-child(5){
-    height: 5%;
-    top: 60%;
-    background-color: #97D59A; /* Light green */
-    animation: expandHeight 5s ease 2s infinite;
-}
-/* Lines that go through the aurora with same background as default */
-/* From 6th child - 13th */
-.aurora-box span:nth-child(n+6):nth-child(-n+13){
-    height: 100%;
-    border-radius: 50%;
-    width: 3%;
-    background: linear-gradient(#0F1B4D, #1E4873);
-}
-.aurora-box span:nth-child(6){
-    left: 10%;
-}
-.aurora-box span:nth-child(7){
-    left: 20%;
-}
-.aurora-box span:nth-child(8){
-    left: 35%;
-}
-.aurora-box span:nth-child(9){
-    left: 45%;
-}
-.aurora-box span:nth-child(10){
-    width: 3%;
-}
-.aurora-box span:nth-child(11){
-    left: 60%;
-}
-.aurora-box span:nth-child(12){
-    left: 80%;
-}
-.aurora-box span:nth-child(13){
-    left: 90%;
-}
-@keyframes expandHeight{
-    0% { height: 5%; }
-    50% { height: 20%; }
-    100% { height: 5%; }
+@media only screen and (max-width: 600px){
+    .aurora-box img{
+        width: 100%;
+    }
 }
 /*
     ========================
@@ -470,7 +428,7 @@ Colors
     .mesosphere,
     .stratosphere,
     .troposphere{
-        height: 200vh;
+        height: 150vh;
     }
 }
 /* Animations for elements floating across each atmosphere */
@@ -511,7 +469,7 @@ Colors
 }
 .page-box{
     margin: 0 auto;
-    padding: 0 auto  
+    padding: 0 auto;  
     max-width: 1300px;
     position: relative;
     z-index: 100;
@@ -752,6 +710,7 @@ Colors
     height: 50px;
     vertical-align: middle;
     padding-left: 10px;
+    background-color: white;
 }
 /* For very small descriptions such as listing skillset */
 .slides-subheader{
@@ -1139,7 +1098,7 @@ Colors
 }
 .weather-box input[type="button"]{
     background: var(--sky-bkg-color);
-    border: 1px solid black
+    border: 1px solid black;
     border-radius: 10px;
 }
 .weather-box h1{
@@ -1355,7 +1314,7 @@ Colors
     50% {left: 100%; opacity: 1;}
     51% {left: 100%; opacity: 0;}
     52% {left: -80%; opacity: 0;}
-    53% {left: -80% opacity: 1;}
+    53% {left: -80%; opacity: 1;}
     100% {left: 10%; opacity: 1;}
 }
 @keyframes big_cloud_50left_to_right{
@@ -1363,7 +1322,7 @@ Colors
     50% {left: 200%; opacity: 1;}
     51% {left: 200%; opacity: 0;}
     52% {left: -100%; opacity: 0;}
-    53% {left: -100% opacity: 1;}
+    53% {left: -100%; opacity: 1;}
     100% {left: 50%; opacity: 1;}
 }
 /*  

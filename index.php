@@ -2,7 +2,7 @@
 <html>
 <head>
 	<?php 
-		// $base  = "https://www.mattnewyen.com";
+		//$base  = "https://www.mattnewyen.com";
 		$base = "http://localhost/portfolio";
 		$date = date("D M d, Y G:i"); // For versioning
 	?>
@@ -88,21 +88,9 @@
 	-->
 
 	<div id = "thermosphere" class = "thermosphere">
+		
 		<div class = "aurora-box">
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			<!-- Lines going through the aurora with same background as the default -->
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
+			<img src = "./images/aurora.png">
 		</div>
 
 		<div class = "double-box">
@@ -159,7 +147,7 @@
 			</div>
 
 			<div class = "right-box">
-				<div class = "header">
+				<div id = "thermo-header" class = "header">
 					Thermosphere
 				</div>
 

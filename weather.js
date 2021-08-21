@@ -1,3 +1,12 @@
+// When the window resizes, adjust the height to get 100%
+// This is mostly for mobile to prevent the address bar from creating random space on the bottom
+window.addEventListener('resize', () => {
+	// Update element's size
+	let vh = window.innerHeight * 0.01;
+	// Set var --vh to be the new size
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
+})
+
 // Global variables to switch to diff styles
 var body = document.body,
 	wholeHTML = document.documentElement,
@@ -20,6 +29,10 @@ var exoDiv = document.getElementById('exosphere'),
 
 // Mobile width 
 var mobileWidth = window.matchMedia("(max-width: 600px)");
+// Thermosphere is too long of a word for mobile without being cut off
+if (mobileWidth.matches){
+	document.getElementById('thermo-header').innerHTML = "Thermo -Sphere"
+}
 
 var progressBar = document.getElementById('progress-bar'),
 	daylight,
