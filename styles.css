@@ -671,6 +671,15 @@ Colors
 .sublist{
     font-size: clamp(1rem, 1.5vw, 3rem);
 }
+.sublist a{
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.sublist a:hover{
+    color: var(--hover-color);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
 .subdescription{
     color: var(--text-color);
     font-size: clamp(1rem, 1.2vw, 1.8rem);
