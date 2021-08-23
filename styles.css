@@ -126,6 +126,7 @@ Colors
 */
 :root{
     --border-color: #D28D15; /* Orange */
+    --header-color: #D28D15; /* Orange */
     --hover-color: #D28D15;
     --text-color: #D9D6D9; /* Light gray */
     --link-color: #D9D6D9; /* Light gray */
@@ -655,11 +656,15 @@ Colors
     }
 }
 
-.header{
-    color: #D28D15;
+.header,
+.atm-header{
+    color: var(--header-color);
     font-size: clamp(4rem, 6vw, 6rem);
     padding-bottom: 50px;
     text-align: center;
+}
+.atm-header{
+    font-size: clamp(1.5rem, 3vw, 3rem);
 }
 .subheader,
 .sublist{

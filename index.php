@@ -147,7 +147,7 @@
 			</div>
 
 			<div class = "right-box">
-				<div id = "thermo-header" class = "header">
+				<div id = "thermo-header" class = "atm-header">
 					Thermosphere
 				</div>
 
@@ -203,7 +203,7 @@
 			</div>
 
 			<div class = "right-box">
-				<div class = "header">
+				<div class = "atm-header">
 					Mesosphere
 				</div>
 
@@ -249,7 +249,7 @@
 				</div> <!-- End of contact me -->
 			</div>
 			<div class = "right-box">
-				<div class = "header">
+				<div class = "atm-header">
 					Stratosphere
 				</div>
 
@@ -379,7 +379,7 @@
 			</div> <!-- End of main box -->
 
 			<div class = "right-box" style = "border: none;">
-				<div id = "tropo-header" class = "header">
+				<div id = "tropo-header" class = "atm-header">
 					Troposphere
 				</div>
 

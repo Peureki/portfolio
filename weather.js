@@ -29,10 +29,6 @@ var exoDiv = document.getElementById('exosphere'),
 
 // Mobile width 
 var mobileWidth = window.matchMedia("(max-width: 600px)");
-// Thermosphere is too long of a word for mobile without being cut off
-if (mobileWidth.matches){
-	document.getElementById('thermo-header').innerHTML = "Thermo -Sphere"
-}
 
 var progressBar = document.getElementById('progress-bar'),
 	daylight,
