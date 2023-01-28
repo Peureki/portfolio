@@ -17,6 +17,7 @@
 	<link type = "text/css" rel = "stylesheet" href = "<?php echo $base;?>/styles.css?v=<?php echo $date;?>">
 </head>
 <body>
+	<!--
 	<div class = "nav-container">
 		<ul class = "nav-bar">
 			<li class = "nav-dropdown">
@@ -51,6 +52,7 @@
 			</li>
 		</ul>
 	</div>
+-->
 	<!-- 
 		===================================================================================
 		==================================== EXOSPHERE ====================================
@@ -64,20 +66,18 @@
 			<div class = "right-box" style = "border: none;">
 				<div class = "header">
 					<h1>Hi, I'm Matt <br>Nguyen<span id = "name"></span></h1>
+					<h3 id = "intro-title">Web Developer</h3>
 				</div>
 
-				<div class = "subdescription" style = "text-align: center;">
-					(New-Yen), (New-Gen), (Nwin)
+				<div class = "subdescription">
+					<p1>(New-Yen), (New-Gen), (Nwin)</p1>
 				</div>
 
-				<div class = "subheader" style = "margin-top: 30px;">
-					and welcome to the <span class = "highlight">Exosphere</span>
-				</div>
-
-				<div class = "subdescription" style = "text-align: center;">
-					You may find a satellite or two orbiting around
-				</div>
 			</div>
+		</div>
+
+		<div class = "atm-name-box">
+			<p>Exosphere</p>
 		</div>
 	</div>
 
@@ -89,72 +89,56 @@
 
 	<div id = "thermosphere" class = "thermosphere">
 		
+		<!--
 		<div class = "aurora-box">
 			<img src = "./images/aurora.png">
 		</div>
+		-->
 
-		<div class = "double-box">
-			<div class = "left-box">
-				<div class = "header">
-					<h1>About Me</h1>
-				</div>
+		<div class = "sticky-header" id = "thermo-sticky-header">
+			<div class = "header">
+				<h2>About Me</h2>
+			</div>
+		</div>
 
-				<div class = "slide-selectors" onclick = "nextSlide(1);">
-					&#187;
-				</div>
+		<div class = "abs-scroll-box">
+			<div class = "abs-scroll-grid">
+				<h3>Web Developer</h3>
+				<p>I was a content creator for a popular MMORPG, Guild Wars 2, and I needed a way to show off my content to my friends and peers. A Google Spreadsheet can only hold so much information. My first project, Peuresearchcenter.com, is what started it all. Since then, I've grown to love web development. I'm facinated in creating a website as an art form; to create visuals, interactions, and to challenge myself. I love making websites that are impactful, meaningful, and provide a service to a community. The best part is hearing my work has brought a positive impact in someone's life. </p>
 
-				<div class = "slides-thermo">
-					<div class = "slides-header">
-						Web Developer
-					</div>
-					<div class = "slides-description">
-						I'm an individual that thrives in passion and learning something new. Every day, the goal is to become the best version of myself. I strive to build projects with code that is efficent, functional, and simple as possible while having fun with it!
-					</div>
-
-					<div class = "skill-set">
-						<img src ="./images/html.png" loading = "lazy">
-						<img src = "./images/css.png" loading = "lazy">
-						<img src = "./images/javascript.png" loading = "lazy">
-					</div>
-				</div>
-
-				<div class = "slides-thermo">
-					<div class = "slides-header">
-						Weather Enthusiast
-					</div>
-					<div class = "slides-description">
-						We live in an extremely dynamic and ever-changing world that continuously surprises me. As with web development, weather is never a subject to stop learning. There will always be a new discovery, new pheonomenon to study, new ways of better understanding how the world functions. Weather always happens for a reason, and I want to know why. 
-					</div>
-				</div>
-
-				<div class = "slides-thermo">
-					<div class = "slides-header">
-						Dancer
-					</div>
-					<div class = "slides-description">
-						Dancing was never my forte. I grew up in the west surburbs of Chicago, but it was only until I left for college that I realize what I've been missing. Chicago is rich in history and culture, especially in terms of music. Shuffling, house dance, Chicago footwork, the music of house, the music of techno. The combination of dancing and music is euphoric to me. I let my feet do the talking to define my individuality.
-					</div>
-				</div>
-
-				<div class = "slides-thermo">
-					<div class = "slides-header">
-						Guild Wars 2
-					</div>
-					<div class = "slides-description">
-						Guild Wars 2 is one of the most popular MMORPGs (massive multiplayer online role playing game) in the gaming industy since it's 2012 debut. Guild Wars 2 is my passion because I can escape reality while still having great social interactions. I've been leading guilds of hundreds of players since I was 17 and still going strong today! The game has not only taught me how to have fun in a game, but it has taught me how to be strong leader, teacher, and speaker.
-					</div>
+				<div class = "flex-items">
+					<img src = "./images/html.png">
+					<img src = "./images/css.png">
+					<img src = "./images/javascript.png">
+					<img src = "./images/php.svg">
+					<img src = "./images/mysql.png">
+					<img src = "./images/google-apps-script.png">
+					<img src = "./images/duda.png">
 				</div>
 			</div>
 
-			<div class = "right-box">
-				<div id = "thermo-header" class = "atm-header">
-					Thermosphere
-				</div>
-
-				<div class = "subdescription">
-					Dubbed "Thermosphere" because this part of the atmosphere captures solar radiation. In general, higher altitude &#8594; higher temperature. Starting from 95-120km up to ~600km above sea-level, temperatures can go as high as 2500C! This is also where auroras mainly occur. 
-				</div>
+			<div class = "abs-scroll-grid">
 			</div>
+
+			<div class = "abs-scroll-grid">
+			</div>
+
+			<div class = "abs-scroll-grid">
+				<h3>Weather Enthusiast</h3>
+				<p>Weather is so fascinating to me. We live in a world where somewhere there's a major storm, snowing, clear skies, or having a natrual disaster while you're reading this. Even in our everyday life, it's never the same even though sometimes it may feel that way. That's why I wanted to learn more about it during my undergrad years. Initially I was learning Computer Science, but projects never clicked (now look at me). I graduated with a Bachelor's in Meteorology in May 2019 and became a teacher for students K-12. I taught little and young humans my passion for weather by interacting with them, doing experiments, and making it fun!</p>
+			</div>
+
+			<div class = "abs-scroll-grid">
+				<h3>Dancer</h3>
+				<p>Growing up, I'd never thought I'd ever consider myself a dancer. I sometimes still consider myself a moving stick when it comes to dancing! But, over the year has proven otherwise. Music was all over the place for me. I was one of those, "I kind of like a little bit of everything" kind of guys. Until I heard House music. I've randomly came across videos of people shuffling and thought it was the coolest thing. I wanted to be a cool bean too! To this day, I'm still moving my feet whenever I hear a good beat. </p>
+			</div>
+
+			<div class = "abs-scroll-grid">
+			</div>
+		</div>
+			
+		<div class = "atm-name-box">
+			<p>Thermosphere</p>
 		</div>
 	</div>
 

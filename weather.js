@@ -93,8 +93,6 @@ async function getWeather(id){
 		tempFeels = document.getElementById('tempFeels'),
 		currentWeather = document.getElementById('currentWeather');
 
-
-
 	// If text1 bar returns blank, don't do anything
 	if (id == null){
 	} else {
@@ -866,6 +864,7 @@ cityInput.addEventListener('focusout', () => tree.style.opacity = 1);
 	============== SLIDES ===============
 	=====================================
 */
+/*
 var slideIndex = 1; 
 showSlides(slideIndex);
 
@@ -887,3 +886,18 @@ function showSlides(num){
   	}
 	slides[slideIndex - 1].style.display = "block";
 }
+*/
+let screenHeight = screen.height,
+	windowWidth = window.innerWidth;
+
+let thermoStickyHeader = document.getElementById('thermo-sticky-header');
+
+body.addEventListener('scroll', () => {
+	let mesoDivY = mesoDiv.getBoundingClientRect().y,
+		thermoDivY = thermoDiv.getBoundingClientRect().y; 
+
+	console.log('screenheight: ', thermoDivY);
+	if (mesoDivY >= screenHeight && thermoDivY <= 0){
+		thermoStickyHeader.style.transform = `translateY(${thermoDivY * -1}px)`;
+	}
+})

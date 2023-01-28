@@ -37,7 +37,9 @@ body {
     background: #DDDFDA;
     line-height:1;
 }
-
+p{
+    line-height: 1.5;
+}
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section {
     display:block;
@@ -160,6 +162,9 @@ Colors
 
     --contact-bkg-color: #D9DEE1; /* Light gray */
 
+    --header-h1-size: clamp(4rem, 6vw, 6rem);
+    --header-h2-size: clamp(3rem, 4vw, 5rem);
+    --header-h3-size: clamp(2rem, 3vw, 4rem);
     --desc-size: clamp(1.2rem, 1.5vw, 2rem);
 }
 .loading-screen{
@@ -204,6 +209,22 @@ Colors
     z-index: 1;
 }
 /*
+    ============================
+    ===== ATMOSPHERE NAMES =====
+    ============================
+    These are little names on the bottom right corner of every atmosphere to tell the users what atmosphere they're in
+*/
+.atm-name-box{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+.atm-name-box p{
+    font-size: var(--desc-size);
+    color: var(--highlight-text);
+}
+
+/*
     =====================
     ===== EXOSPHERE =====
     =====================
@@ -214,10 +235,14 @@ Colors
     z-index: 1000;
 }
 #satellite{
-    width: 10%;
+    width: 5%;
     left: -50%;
-    top: 60%;
-    animation: leftToRight 10s linear 5s infinite;
+    top: 75%;
+    animation: leftToRight 30s linear 0s infinite;
+}
+#intro-title{
+    color: var(--text-color);
+    margin-top: 20px;
 }
 /* Container for the rocket. Allows to create seperate circles within */
 .rocket-box{
@@ -277,9 +302,80 @@ Colors
     ========================
 */
 .thermosphere{
-    height: 100vh;
+    min-height: 400vh;
     background: var(--thermo-bkg-color);
     z-index: 1005;
+    position: relative;
+}
+.sticky-header{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transform: translateY(0px);
+    z-index: 1000;
+}
+.abs-scroll-box{
+    position: absolute;
+    height: 100%;
+    width: 95%;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-areas: 
+        "main1 main1 one" 
+        "two main2 main2"
+        "main3 main3 three"
+    ;
+    grid-auto-columns: 1fr;
+}
+.abs-scroll-grid{
+    /*border: 1px solid white;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.abs-scroll-grid h3{
+    font-size: var(--header-h3-size);
+    color: var(--header-color);
+    margin-bottom: 30px;
+}
+.abs-scroll-grid p{
+    font-size: var(--desc-size);
+    color: var(--text-color);
+}
+.abs-scroll-box > div:nth-child(1){
+    grid-area: main1;
+}
+.abs-scroll-box > div:nth-child(2){
+    grid-area: one;
+}
+.abs-scroll-box > div:nth-child(3){
+    grid-area: two;
+}
+.abs-scroll-box > div:nth-child(4){
+    grid-area: main2;
+}
+.abs-scroll-box > div:nth-child(5){
+    grid-area: main3;
+}
+.abs-scroll-box > div:nth-child(6){
+    grid-area: three;
+}
+.flex-items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flex-items img{
+    width: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .aurora-box{
     width: 100vw;
@@ -293,17 +389,17 @@ Colors
     right: 0;
     margin: auto;
     width: 40%;
-    animation: smallMovement 10s linear infinite;
+    animation: smallMovement 5s linear infinite;
 }
 @keyframes smallMovement{
     0% { 
-        opacity: 1;
+        opacity: 0.6;
     }
     50% { 
-        opacity: 0.5;
+        opacity: 0.3;
     }
     100% { 
-        opacity: 1; 
+        opacity: 0.6; 
     }
 }
 @media only screen and (max-width: 3000px){
@@ -442,8 +538,8 @@ Colors
 /* Animations for elements floating across each atmosphere */
 /* Exo - Satellite */
 @keyframes leftToRight{
-    0% { left: -50%; }
-    100% { left: 150%; }
+    0% { left: -5%; }
+    100% { left: 105%; }
 }
 /* Exo - Rocket whole */
 @keyframes downToUp{
@@ -597,6 +693,12 @@ Colors
     =====================================
 */
 /* Box to allow two large divs together */ 
+/* Fills up the whole div */
+.whole-box{
+    height: 100%;
+    position: relative;
+}
+
 .double-box,
 .exo-double-box{
     display: flex;
@@ -605,7 +707,6 @@ Colors
     height: 100%;
     position: relative;
     z-index: 10;
-    margin-left: 75px;
 }
 /* For side by side view */
 .double-box > div,
@@ -659,9 +760,17 @@ Colors
 .header,
 .atm-header{
     color: var(--header-color);
-    font-size: clamp(4rem, 6vw, 6rem);
     padding-bottom: 50px;
     text-align: center;
+}
+.header h1{
+    font-size: var(--header-h1-size);
+}
+.header h2{
+    font-size: var(--header-h2-size);
+}
+.header h3{
+    font-size: var(--header-h3-size);
 }
 .atm-header{
     font-size: clamp(1.5rem, 3vw, 3rem);
@@ -688,8 +797,7 @@ Colors
 .subdescription{
     color: var(--text-color);
     font-size: clamp(1rem, 1.2vw, 1.8rem);
-    text-align: justify;
-    font-style: italic;
+    text-align: center;
 }
 #meso-subheader{
     color: #F09909;
