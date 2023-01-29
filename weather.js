@@ -896,8 +896,27 @@ body.addEventListener('scroll', () => {
 	let mesoDivY = mesoDiv.getBoundingClientRect().y,
 		thermoDivY = thermoDiv.getBoundingClientRect().y; 
 
-	console.log('screenheight: ', thermoDivY);
 	if (mesoDivY >= screenHeight && thermoDivY <= 0){
 		thermoStickyHeader.style.transform = `translateY(${thermoDivY * -1}px)`;
 	}
 })
+
+// Create new object that will take "observe" if the user has scrolled to where the object is visible
+// If object is visible => do the .show effect
+let observer = new IntersectionObserver((entries) => {
+	entries.forEach((entry) => {
+		if (entry.isIntersecting){
+			entry.target.classList.add('show');
+		}
+	})
+}, {
+	threshold: 0,
+	rootMargin: '0px 0px 0px 100%',
+});
+let flexItems = document.querySelectorAll('.flex-item'),
+	scrollGridContentLeft = document.querySelectorAll('.abs-scroll-grid-content-left'),
+	scrollGridContentRight = document.querySelectorAll('.abs-scroll-grid-content-right');
+
+flexItems.forEach((el) => observer.observe(el));
+scrollGridContentLeft.forEach((el) => observer.observe(el));
+scrollGridContentRight.forEach((el) => observer.observe(el));

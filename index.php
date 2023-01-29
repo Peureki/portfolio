@@ -103,34 +103,61 @@
 
 		<div class = "abs-scroll-box">
 			<div class = "abs-scroll-grid">
-				<h3>Web Developer</h3>
-				<p>I was a content creator for a popular MMORPG, Guild Wars 2, and I needed a way to show off my content to my friends and peers. A Google Spreadsheet can only hold so much information. My first project, Peuresearchcenter.com, is what started it all. Since then, I've grown to love web development. I'm facinated in creating a website as an art form; to create visuals, interactions, and to challenge myself. I love making websites that are impactful, meaningful, and provide a service to a community. The best part is hearing my work has brought a positive impact in someone's life. </p>
+				<div class = "abs-scroll-grid-content-left">
+					<h3>Web Developer</h3>
+					<p>I was a content creator for a popular MMORPG, Guild Wars 2, and I needed a way to show off my content to my friends and peers. A Google Spreadsheet can only hold so much information. My first project, Peuresearchcenter.com, is what started it all. Since then, I've grown to love web development. I'm facinated in creating a website as an art form; to create visuals, interactions, and to challenge myself. I love making websites that are impactful, meaningful, and provide a service to a community. The best part is hearing my work has brought a positive impact in someone's life. </p>
 
-				<div class = "flex-items">
-					<img src = "./images/html.png">
-					<img src = "./images/css.png">
-					<img src = "./images/javascript.png">
-					<img src = "./images/php.svg">
-					<img src = "./images/mysql.png">
-					<img src = "./images/google-apps-script.png">
-					<img src = "./images/duda.png">
+					<div class = "flex-item-box">
+						<div class = "flex-item">
+							<img src = "./images/html.png">
+						</div>
+						<div class = "flex-item">
+							<img src = "./images/css.png">
+						</div>
+						<div class = "flex-item">
+							<img src = "./images/javascript.png">
+						</div>
+						<div class = "flex-item">
+							<img src = "./images/php.svg">
+						</div>
+						<div class = "flex-item">
+							<img src = "./images/mysql.png">
+						</div>
+						<div class = "flex-item">
+							<img src = "./images/google-apps-script.png">
+						</div>
+						<div class = "flex-item">
+							<img src = "./images/duda.png">
+						</div>
+					</div>
+
+					<div class = "flex-list">
+						<p>View projects</p>
+					</div>
+				</div>
+				
+
+				
+			</div>
+
+			<div class = "abs-scroll-grid">
+			</div>
+
+			<div class = "abs-scroll-grid">
+			</div>
+
+			<div class = "abs-scroll-grid">
+				<div class = "abs-scroll-grid-content-right">
+					<h3>Weather Enthusiast</h3>
+					<p>Weather is so fascinating to me. We live in a world where somewhere there's a major storm, snowing, clear skies, or having a natrual disaster while you're reading this. Even in our everyday life, it's never the same even though sometimes it may feel that way. That's why I wanted to learn more about it during my undergrad years. Initially I was learning Computer Science, but projects never clicked (now look at me). I graduated with a Bachelor's in Meteorology in May 2019 and became a teacher for students K-12. I taught little and young humans my passion for weather by interacting with them, doing experiments, and making it fun!</p>
 				</div>
 			</div>
 
 			<div class = "abs-scroll-grid">
-			</div>
-
-			<div class = "abs-scroll-grid">
-			</div>
-
-			<div class = "abs-scroll-grid">
-				<h3>Weather Enthusiast</h3>
-				<p>Weather is so fascinating to me. We live in a world where somewhere there's a major storm, snowing, clear skies, or having a natrual disaster while you're reading this. Even in our everyday life, it's never the same even though sometimes it may feel that way. That's why I wanted to learn more about it during my undergrad years. Initially I was learning Computer Science, but projects never clicked (now look at me). I graduated with a Bachelor's in Meteorology in May 2019 and became a teacher for students K-12. I taught little and young humans my passion for weather by interacting with them, doing experiments, and making it fun!</p>
-			</div>
-
-			<div class = "abs-scroll-grid">
-				<h3>Dancer</h3>
-				<p>Growing up, I'd never thought I'd ever consider myself a dancer. I sometimes still consider myself a moving stick when it comes to dancing! But, over the year has proven otherwise. Music was all over the place for me. I was one of those, "I kind of like a little bit of everything" kind of guys. Until I heard House music. I've randomly came across videos of people shuffling and thought it was the coolest thing. I wanted to be a cool bean too! To this day, I'm still moving my feet whenever I hear a good beat. </p>
+				<div class = "abs-scroll-grid-content-left">
+					<h3>Dancer</h3>
+					<p>Growing up, I'd never thought I'd ever consider myself a dancer. I sometimes still consider myself a moving stick when it comes to dancing! But, over the year has proven otherwise. Music was all over the place for me. I was one of those, "I kind of like a little bit of everything" kind of guys. Until I heard House music. I've randomly came across videos of people shuffling and thought it was the coolest thing. I wanted to be a cool bean too! To this day, I'm still moving my feet whenever I hear a good beat. </p>
+				</div>
 			</div>
 
 			<div class = "abs-scroll-grid">
