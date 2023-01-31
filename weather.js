@@ -900,13 +900,31 @@ body.addEventListener('scroll', () => {
 		thermoStickyHeader.style.transform = `translateY(${thermoDivY * -1}px)`;
 	}
 })
-
+// ====================================================================================================
+// OBSERVER OJBECT
 // Create new object that will take "observe" if the user has scrolled to where the object is visible
 // If object is visible => do the .show effect
+// ====================================================================================================
 let observer = new IntersectionObserver((entries) => {
+	//console.log('entries', entries[0]);
 	entries.forEach((entry) => {
 		if (entry.isIntersecting){
 			entry.target.classList.add('show');
+			
+			if (entry.target.id == "arrow-1"){
+				entry.target.children[1].animate([
+					{
+						strokeDashoffset: 200,
+					},
+					{
+						strokeDashoffset: 0,
+					}
+					], {
+						duration: 2000,
+						fill: "forwards",
+				});
+				console.log(entry.target.children[1]);
+			}
 		}
 	})
 }, {
@@ -915,8 +933,71 @@ let observer = new IntersectionObserver((entries) => {
 });
 let flexItems = document.querySelectorAll('.flex-item'),
 	scrollGridContentLeft = document.querySelectorAll('.abs-scroll-grid-content-left'),
-	scrollGridContentRight = document.querySelectorAll('.abs-scroll-grid-content-right');
+	scrollGridContentRight = document.querySelectorAll('.abs-scroll-grid-content-right'),
+	animateSVG = document.querySelectorAll('.animate-svg');
 
 flexItems.forEach((el) => observer.observe(el));
 scrollGridContentLeft.forEach((el) => observer.observe(el));
 scrollGridContentRight.forEach((el) => observer.observe(el));
+animateSVG.forEach((el) => observer.observe(el));
+
+// ====================================================================================================
+// GRID STATS
+// Aniamte the numbers in the grid stats to start from 0 => increase to the desinated number
+// As it gets closer to the number, it slows down
+// ====================================================================================================
+let gridNum = document.querySelectorAll('.grid-stats-num'); 
+
+console.log('gridnum', gridNum);
+
+gridNum.forEach((value) => {
+	let endValue = parseInt(value.innerHTML),
+		startValue = 0,
+		duration = 0,
+		increment = 0;
+
+	if (endValue <= 10){
+		duration = 500 - endValue * 25;
+		increment = 1;
+	} else if (endValue <= 100 && endValue > 10){
+		duration = 100 - endValue; 
+		increment = 1;
+	} else if (endValue > 100){
+		duration = endValue/(endValue*(endValue/1000));
+		increment = Math.floor(endValue/75);
+	}
+
+	value.innerHTML = startValue; 
+	console.log('first duration', duration);
+	let timer = () => {
+		// When the increasing startValue gets to 85% of it's target num => start slowing the duration
+		if (startValue >= (endValue * 0.50) && startValue < (endValue * 0.75))
+			duration += (startValue/endValue);
+		else if (startValue >= (endValue * 0.75)){
+			duration += (startValue/endValue)*5;
+		}
+
+		startValue += increment; 
+		if (startValue > endValue){
+			startValue = endValue;
+		}
+		value.textContent = startValue;
+
+		if (startValue < endValue)
+			setTimeout(timer, duration); 
+	}
+	setTimeout(timer, duration);
+
+	/*
+	let	counter = setInterval(() => {
+		interval += 100; 
+		duration = Math.floor(interval / endValue)
+		startValue += 1; 
+		value.textContent = startValue; 
+		console.log('duration: ', duration);
+		if (startValue == endValue){
+			clearInterval(counter); 
+		}
+	}, duration); 
+	*/
+});

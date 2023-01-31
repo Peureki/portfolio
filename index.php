@@ -107,33 +107,35 @@
 					<h3>Web Developer</h3>
 					<p>I was a content creator for a popular MMORPG, Guild Wars 2, and I needed a way to show off my content to my friends and peers. A Google Spreadsheet can only hold so much information. My first project, Peuresearchcenter.com, is what started it all. Since then, I've grown to love web development. I'm facinated in creating a website as an art form; to create visuals, interactions, and to challenge myself. I love making websites that are impactful, meaningful, and provide a service to a community. The best part is hearing my work has brought a positive impact in someone's life. </p>
 
-					<div class = "flex-item-box">
-						<div class = "flex-item">
-							<img src = "./images/html.png">
+					<div class = "grid-stats-box">
+						<div class = "grid-stats">
+							<h4 class = "grid-stats-num">29</h4>
+							<p>Websites</p>
 						</div>
-						<div class = "flex-item">
-							<img src = "./images/css.png">
-						</div>
-						<div class = "flex-item">
-							<img src = "./images/javascript.png">
-						</div>
-						<div class = "flex-item">
-							<img src = "./images/php.svg">
-						</div>
-						<div class = "flex-item">
-							<img src = "./images/mysql.png">
-						</div>
-						<div class = "flex-item">
-							<img src = "./images/google-apps-script.png">
-						</div>
-						<div class = "flex-item">
-							<img src = "./images/duda.png">
+
+						<div class = "grid-stats">
+							<h4 class = "grid-stats-num">3</h4>
+							<p>Years of experience</p>
 						</div>
 					</div>
 
+					<svg fill="none" version="1.1" viewBox="0 0 27.12 79.589" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" class = "animate-svg" id = 'arrow-1'>
+					 	<metadata>
+					 	 	<rdf:RDF>
+					   			<cc:Work rdf:about="">
+					    			<dc:format>image/svg+xml</dc:format>
+					    			<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+					    			<dc:title/>
+					   			</cc:Work>
+					  		</rdf:RDF>
+					 	</metadata>
+					 	<path d="m25.62 1.5c-1.8694 1.1603-3.9592 2.198-5.9469 3.1396-2.4383 1.155-4.5726 2.6526-6.6447 4.3689-1.786 1.4793-3.533 3.2961-4.0034 5.6479-0.444 2.2204-0.1666 4.3476 1.0798 6.246 1.4186 2.1607 3.843 4.1141 5.9802 5.5316 1.0423 0.6914 1.9267 1.5842 2.9236 2.3423 0.8587 0.6529 1.7452 1.5752 2.4585 2.392 2.7633 3.1644 3.7324 6.5748 3.5466 10.756-0.0968 2.1777-1.6862 4.4097-3.123 5.9221-1.6304 1.7162-3.1974 3.5047-4.8672 5.1745-0.7758 0.7758-1.5182 1.5543-2.3173 2.309-0.749 0.7074-1.2654 1.6035-2.0183 2.3007-0.9853 0.9123-2.0606 2.0799-2.4668 3.4054-0.449 1.465-0.7475 2.6148-0.7475 4.1529 0 1.084-0.1455 2.2838 0.0332 3.3555 0.2281 1.3689 1.1738 2.8084 1.7276 4.0865 0.4746 1.0953 1.4824 1.9772 1.8273 3.098 0.2273 0.7388 0.6153 1.4716 0.9551 2.1512 0.4606 0.9212-1.4397-1.4776-2.2259-2.1429-2.3599-1.9967-5.1951-3.3703-7.6164-5.3074-0.7748-0.6198-1.4265-1.3555-2.2592-1.8854-1.3126-0.8352 0.8339 0.6315 1.196 0.897 0.7502 0.5502 1.4414 1.3582 2.2509 1.7941 0.6848 0.3687 1.4309 0.7504 2.0183 1.2791 0.3414 0.3073 0.778 0.3812 1.0797 0.7475 0.2244 0.2725 0.4079 0.4677 0.6811 0.6645 0.6647 0.4785 1.3032 1.1061 1.9768 1.6113 0.3934 0.295 2.6798 2.2548 2.9153 1.6529 0.2618-0.669 0.2911-1.3647 0.4569-2.0516 0.1698-0.7037 0.5174-1.4029 0.7475-2.093 0.3471-1.0414 0.9462-2.3283 1.5781-3.231 1.1388-1.6269 2.5329-2.9976 3.422-4.7758" stroke="#d28d15" stroke-linecap="round" stroke-width="2"/>
+					</svg>
+
 					<div class = "flex-list">
-						<p>View projects</p>
+						<p><a href = "">Jump to projects</a></p>
 					</div>
+
 				</div>
 				
 
@@ -141,15 +143,50 @@
 			</div>
 
 			<div class = "abs-scroll-grid">
+				<div class = "flex-item-box">
+					<div class = "flex-item">
+						<img src = "./images/html.png">
+					</div>
+					<div class = "flex-item">
+						<img src = "./images/css.png">
+					</div>
+					<div class = "flex-item">
+						<img src = "./images/javascript.png">
+					</div>
+					<div class = "flex-item">
+						<img src = "./images/php.svg">
+					</div>
+					<div class = "flex-item">
+						<img src = "./images/mysql.png">
+					</div>
+					<div class = "flex-item">
+						<img src = "./images/google-apps-script.png">
+					</div>
+					<div class = "flex-item">
+						<img src = "./images/duda.png">
+					</div>
+				</div>
 			</div>
 
 			<div class = "abs-scroll-grid">
-			</div>
-
-			<div class = "abs-scroll-grid">
-				<div class = "abs-scroll-grid-content-right">
+				<div class = "abs-scroll-grid-content-left">
 					<h3>Weather Enthusiast</h3>
 					<p>Weather is so fascinating to me. We live in a world where somewhere there's a major storm, snowing, clear skies, or having a natrual disaster while you're reading this. Even in our everyday life, it's never the same even though sometimes it may feel that way. That's why I wanted to learn more about it during my undergrad years. Initially I was learning Computer Science, but projects never clicked (now look at me). I graduated with a Bachelor's in Meteorology in May 2019 and became a teacher for students K-12. I taught little and young humans my passion for weather by interacting with them, doing experiments, and making it fun!</p>
+				</div>
+			</div>
+
+			<div class = "abs-scroll-grid">
+				
+				<div class = "grid-img-collage-box">
+					<div class = "grid-img-collage">
+						<img src = "./images/teacher/class-1.jpg">
+					</div>
+					<div class = "grid-img-collage">
+						<img src = "./images/teacher/class-2.jpg">
+					</div>
+					<div class = "grid-img-collage">
+						<img src = "./images/teacher/class-3.jpg">
+					</div>
 				</div>
 			</div>
 

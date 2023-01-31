@@ -131,7 +131,7 @@ Colors
     --header-color: #D28D15; /* Orange */
     --hover-color: #D28D15;
     --text-color: #D9D6D9; /* Light gray */
-    --link-color: #D9D6D9; /* Light gray */
+    --link-color: #D28D15; /* Light gray */
     --sky-bkg-color: #D9DEE1; /* Light gray */
     --highlight-text: #D28D15; /* Orange */
 
@@ -165,6 +165,7 @@ Colors
     --header-h1-size: clamp(5rem, 7vw, 7rem);
     --header-h2-size: clamp(4rem, 5vw, 6rem);
     --header-h3-size: clamp(2rem, 3vw, 4rem);
+    --header-h4-size: clamp(7rem, 9vw, 9rem);
     --desc-size: clamp(1.2rem, 1.5vw, 2rem);
 }
 .loading-screen{
@@ -325,18 +326,20 @@ Colors
     right: 0;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 300px;
     display: grid;
     grid-template-areas: 
         "main1 main1 one" 
-        "two main2 main2"
+        "main2 main2 two"
         "main3 main3 three"
     ;
-    grid-auto-columns: 1fr;
+    grid-auto-columns: minmax(50px, 700px);
+    z-index: 10001;
 }
 .abs-scroll-grid{
     /*border: 1px solid white;*/
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 }
@@ -355,6 +358,9 @@ Colors
     filter: blur(5px);
     transform: translateX(-100%);
     transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .abs-scroll-grid-content-right{
     transform: translateX(100%);
@@ -366,10 +372,10 @@ Colors
     grid-area: one;
 }
 .abs-scroll-box > div:nth-child(3){
-    grid-area: two;
+    grid-area: main2;
 }
 .abs-scroll-box > div:nth-child(4){
-    grid-area: main2;
+    grid-area: two;
 }
 .abs-scroll-box > div:nth-child(5){
     grid-area: main3;
@@ -381,13 +387,18 @@ Colors
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-.flex-item{
+.flex-item,
+.animate-svg{
     opacity: 0;
     filter: blur(5px);
     transform: translateX(-100%);
+    transition: all 0.5s ease;
 }
 .flex-item:nth-child(1){
     transition-delay: 100ms;
@@ -410,16 +421,93 @@ Colors
 .flex-item:nth-child(7){
     transition-delay: 700ms;
 }
+.grid-img-collage-box{
+    display: flex;
+    flex-direction: column;
+}
+.grid-img-collage-box:active{
+    cursor: grabbing;
+}
+.grid-img-collage img{
+    width: 600px;
+    margin: 10px;
+}
+.grid-img-collage-box > div:nth-child(1){
+    grid-area: one;
+}
+.grid-img-collage-box > div:nth-child(2){
+    grid-area: two;
+}
+.grid-img-collage-box > div:nth-child(3){
+    grid-area: three;
+}
 .show{
     opacity: 1;
     filter: blur(0px);
     transform: translateX(0%);
-    transition: all 1s ease;
 }
+
+/* ===============================================================================
+   GRID STATS
+   Display stats in a grid format
+   ===============================================================================
+*/
+.grid-stats-box{
+    display: grid;
+    grid-template-areas: 
+        "one two";
+    gap: 50px;
+    width: 100%;
+    grid-template-columns: 50%;
+}
+.grid-stats-box > div:nth-child(1){
+    grid-area: one;
+}
+.grid-stats-box > div:nth-child(2){
+    grid-area: two;
+}
+.grid-stats-box h4{
+    font-size: var(--header-h4-size);
+    color: var(--text-color);
+}
+.grid-stats-box p{
+    font-size: var(--desc-size);
+    color: var(--text-color);
+}
+/* Content within a grid stat box */
+.grid-stats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .flex-item img{
     width: 80px;
     padding: 10px;
 }
+#arrow-1{
+    cursor: pointer;
+    width: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#arrow-1 path{
+    stroke: var(--highlight-text);
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+}
+#arrow-1:hover path{
+    animation: animate-arrow 1s linear forwards;
+}
+@keyframes animate-arrow{
+    0%{
+        stroke-dashoffset: 200;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+
 .aurora-box{
     width: 100vw;
     height: 100vh;
