@@ -166,7 +166,7 @@ Colors
     --header-h2-size: clamp(4rem, 5vw, 6rem);
     --header-h3-size: clamp(2rem, 3vw, 4rem);
     --header-h4-size: clamp(7rem, 9vw, 9rem);
-    --desc-size: clamp(1.2rem, 1.5vw, 2rem);
+    --desc-size: clamp(1rem, 1.2vw, 2rem);
 }
 .loading-screen{
     background: linear-gradient(#416880, #4D98EC);
@@ -197,7 +197,6 @@ Colors
     Split to each atmosphere are major sections
 */
 .exosphere,
-.thermosphere,
 .mesosphere,
 .stratosphere{
     height: 100vh;
@@ -318,22 +317,18 @@ Colors
     z-index: 1000;
 }
 .abs-scroll-box{
-    position: absolute;
     height: 100%;
     width: 95%;
-    top: 0;
-    left: 0;
-    right: 0;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 300px;
     display: grid;
     grid-template-areas: 
         "main1 main1 one" 
         "main2 main2 two"
         "main3 main3 three"
+        "main4 main4 four"
     ;
-    grid-auto-columns: minmax(50px, 700px);
+    grid-auto-columns: 1fr;
     z-index: 10001;
 }
 .abs-scroll-grid{
@@ -383,6 +378,12 @@ Colors
 .abs-scroll-box > div:nth-child(6){
     grid-area: three;
 }
+.abs-scroll-box > div:nth-child(7){
+    grid-area: main4;
+}
+.abs-scroll-box > div:nth-child(8){
+    grid-area: four;
+}
 .flex-item-box{
     display: flex;
     align-items: center;
@@ -428,9 +429,18 @@ Colors
 .grid-img-collage-box:active{
     cursor: grabbing;
 }
+.grid-img-collage{
+    filter: blur(5px);
+    opacity: 0;
+    transform: translateX(50%);
+    transition: all 0.5s ease;
+}
 .grid-img-collage img{
-    width: 600px;
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
     margin: 10px;
+    border-radius: 50%;
 }
 .grid-img-collage-box > div:nth-child(1){
     grid-area: one;
@@ -459,6 +469,8 @@ Colors
     gap: 50px;
     width: 100%;
     grid-template-columns: 50%;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 .grid-stats-box > div:nth-child(1){
     grid-area: one;

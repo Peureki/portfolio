@@ -889,7 +889,7 @@ function showSlides(num){
 */
 let screenHeight = screen.height,
 	windowWidth = window.innerWidth;
-
+/*
 let thermoStickyHeader = document.getElementById('thermo-sticky-header');
 
 body.addEventListener('scroll', () => {
@@ -900,6 +900,68 @@ body.addEventListener('scroll', () => {
 		thermoStickyHeader.style.transform = `translateY(${thermoDivY * -1}px)`;
 	}
 })
+*/
+// ====================================================================================================
+// GRID STATS
+// Aniamte the numbers in the grid stats to start from 0 => increase to the desinated number
+// As it gets closer to the number, it slows down
+// ====================================================================================================
+// Get all stats
+let gridNum = document.querySelectorAll('.grid-stats-num'); 
+// For each stat value => 
+// 1. Initilize and parse the num from the HTML 
+// 2. Set duration, increments depending on how large the num is 
+// 3. Set up a counter to increment from 0 => target num
+let statCounter = (div) => {
+
+	let specialChar = ''; 
+	if (div.innerHTML.split(/(\W)/).length > 1){
+		specialChar = div.innerHTML.split(/(\W)/)[1];
+	}
+	let endValue = parseInt(div.innerHTML),
+		startValue = 0,
+		duration = 0,
+		increment = 0;
+	// Depending on the size of num, change how long the duration, and how high the num increments for every count
+	// Small nums => small counts 
+	// Large nums => slightly bigger counts, bigger increments
+	if (endValue <= 10){
+		duration = 500 - endValue * 25;
+		increment = 1;
+	} else if (endValue <= 100 && endValue > 10){
+		duration = 100 - endValue; 
+		increment = 1;
+	} else if (endValue > 100){
+		duration = endValue/(endValue*(endValue/1000));
+		increment = Math.floor(endValue/75);
+	}
+	// Counter
+	// Set the HTML num to 0
+	div.innerHTML = startValue; 
+	let counter = () => {
+		// When the increasing startValue gets to 50% of it's target num => start slowing the duration
+		// At 75%, slow duration even more
+		// Goal: Give it the effect of fast counts in the beginning and as the num increases, slow it down (but not too slow)
+		if (startValue >= (endValue * 0.50) && startValue < (endValue * 0.75))
+			duration += (startValue/endValue);
+		else if (startValue >= (endValue * 0.75)){
+			duration += (startValue/endValue)*5;
+		}
+		// For every iteration, add into the starting value
+		startValue += increment; 
+		// Check so the ending value isn't > the target value
+		// If it is => let ending value be the target value
+		if (startValue > endValue){
+			startValue = endValue;
+		}
+		div.textContent = startValue + specialChar;
+		// Repeat iterations until ending value reaches target value
+		if (startValue < endValue)
+			setTimeout(counter, duration); 
+	}
+	setTimeout(counter, duration);
+}
+
 // ====================================================================================================
 // OBSERVER OJBECT
 // Create new object that will take "observe" if the user has scrolled to where the object is visible
@@ -909,6 +971,10 @@ let observer = new IntersectionObserver((entries) => {
 	//console.log('entries', entries[0]);
 	entries.forEach((entry) => {
 		if (entry.isIntersecting){
+			// These classes are before 'show' is added to the className so that it only happens once
+			if (entry.target.className == 'grid-stats-num'){
+				statCounter(entry.target);
+			}
 			entry.target.classList.add('show');
 			
 			if (entry.target.id == "arrow-1"){
@@ -923,81 +989,26 @@ let observer = new IntersectionObserver((entries) => {
 						duration: 2000,
 						fill: "forwards",
 				});
-				console.log(entry.target.children[1]);
 			}
+			
 		}
 	})
 }, {
 	threshold: 0,
 	rootMargin: '0px 0px 0px 100%',
 });
+// Get the classes that should be animated
 let flexItems = document.querySelectorAll('.flex-item'),
 	scrollGridContentLeft = document.querySelectorAll('.abs-scroll-grid-content-left'),
 	scrollGridContentRight = document.querySelectorAll('.abs-scroll-grid-content-right'),
-	animateSVG = document.querySelectorAll('.animate-svg');
-
+	animateSVG = document.querySelectorAll('.animate-svg'),
+	gridImgCollage = document.querySelectorAll('.grid-img-collage');
+// Do observe
 flexItems.forEach((el) => observer.observe(el));
 scrollGridContentLeft.forEach((el) => observer.observe(el));
 scrollGridContentRight.forEach((el) => observer.observe(el));
 animateSVG.forEach((el) => observer.observe(el));
+gridImgCollage.forEach((el) => observer.observe(el));
 
-// ====================================================================================================
-// GRID STATS
-// Aniamte the numbers in the grid stats to start from 0 => increase to the desinated number
-// As it gets closer to the number, it slows down
-// ====================================================================================================
-let gridNum = document.querySelectorAll('.grid-stats-num'); 
+gridNum.forEach((el) => observer.observe(el));
 
-console.log('gridnum', gridNum);
-
-gridNum.forEach((value) => {
-	let endValue = parseInt(value.innerHTML),
-		startValue = 0,
-		duration = 0,
-		increment = 0;
-
-	if (endValue <= 10){
-		duration = 500 - endValue * 25;
-		increment = 1;
-	} else if (endValue <= 100 && endValue > 10){
-		duration = 100 - endValue; 
-		increment = 1;
-	} else if (endValue > 100){
-		duration = endValue/(endValue*(endValue/1000));
-		increment = Math.floor(endValue/75);
-	}
-
-	value.innerHTML = startValue; 
-	console.log('first duration', duration);
-	let timer = () => {
-		// When the increasing startValue gets to 85% of it's target num => start slowing the duration
-		if (startValue >= (endValue * 0.50) && startValue < (endValue * 0.75))
-			duration += (startValue/endValue);
-		else if (startValue >= (endValue * 0.75)){
-			duration += (startValue/endValue)*5;
-		}
-
-		startValue += increment; 
-		if (startValue > endValue){
-			startValue = endValue;
-		}
-		value.textContent = startValue;
-
-		if (startValue < endValue)
-			setTimeout(timer, duration); 
-	}
-	setTimeout(timer, duration);
-
-	/*
-	let	counter = setInterval(() => {
-		interval += 100; 
-		duration = Math.floor(interval / endValue)
-		startValue += 1; 
-		value.textContent = startValue; 
-		console.log('duration: ', duration);
-		if (startValue == endValue){
-			clearInterval(counter); 
-		}
-	}, duration); 
-	*/
-});

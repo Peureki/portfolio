@@ -95,12 +95,13 @@
 		</div>
 		-->
 
+		<!--
 		<div class = "sticky-header" id = "thermo-sticky-header">
 			<div class = "header">
 				<h2>About Me</h2>
 			</div>
 		</div>
-
+		-->
 		<div class = "abs-scroll-box">
 			<div class = "abs-scroll-grid">
 				<div class = "abs-scroll-grid-content-left">
@@ -172,9 +173,28 @@
 				<div class = "abs-scroll-grid-content-left">
 					<h3>Weather Enthusiast</h3>
 					<p>Weather is so fascinating to me. We live in a world where somewhere there's a major storm, snowing, clear skies, or having a natrual disaster while you're reading this. Even in our everyday life, it's never the same even though sometimes it may feel that way. That's why I wanted to learn more about it during my undergrad years. Initially I was learning Computer Science, but projects never clicked (now look at me). I graduated with a Bachelor's in Meteorology in May 2019 and became a teacher for students K-12. I taught little and young humans my passion for weather by interacting with them, doing experiments, and making it fun!</p>
+
+					<div class = "grid-stats-box">
+						<div class = "grid-stats">
+							<h4 class = "grid-stats-num">1000+</h4>
+							<p>Students taught</p>
+						</div>
+
+						<div class = "grid-stats">
+							<h4 class = "grid-stats-num">10+</h4>
+							<p>Schools</p>
+						</div>
+					</div>
 				</div>
+
+
 			</div>
 
+			<!-- 
+				========================================================================================
+				==================================== DANCER SECTION ====================================
+				========================================================================================
+			-->
 			<div class = "abs-scroll-grid">
 				
 				<div class = "grid-img-collage-box">
@@ -193,12 +213,54 @@
 			<div class = "abs-scroll-grid">
 				<div class = "abs-scroll-grid-content-left">
 					<h3>Dancer</h3>
-					<p>Growing up, I'd never thought I'd ever consider myself a dancer. I sometimes still consider myself a moving stick when it comes to dancing! But, over the year has proven otherwise. Music was all over the place for me. I was one of those, "I kind of like a little bit of everything" kind of guys. Until I heard House music. I've randomly came across videos of people shuffling and thought it was the coolest thing. I wanted to be a cool bean too! To this day, I'm still moving my feet whenever I hear a good beat. </p>
+					<p>Growing up, I'd never thought I'd ever consider myself a dancer. I sometimes still consider myself a moving stick when it comes to dancing! But, over the year has proven otherwise. Music was all over the place for me. I was one of those, "I kind of like a little bit of everything" kind of guys. Until I heard House music. I've randomly came across videos of people shuffling and thought it was the coolest thing. I wanted to be a cool bean too! To this day I'm still moving my feet whenever I hear a good beat, being a leader for a shuffle movement, and the web developer for Chicago Shufflers. </p>
+				</div>
+
+				<div class = "grid-stats-box">
+					<div class = "grid-stats">
+						<h4 class = "grid-stats-num">3+</h4>
+						<p>Years of shuffling</p>
+					</div>
+
+					<div class = "grid-stats">
+						<h4 class = "grid-stats-num">3+</h4>
+						<p>Performed on stage</p>
+					</div>
 				</div>
 			</div>
 
 			<div class = "abs-scroll-grid">
 			</div>
+
+			<!-- 
+				=======================================================================================
+				==================================== GAMER SECTION ====================================
+				=======================================================================================
+			-->
+
+			<div class = "abs-scroll-grid">
+				<div class = "abs-scroll-grid-content-left">
+					<h3>Gamer</h3>
+					<p>I call myself a gamer, but I'm very stubborn when it comes to trying out new games. Instead, I mostly play a select few games and try to master them as much as possible. My favorite game of all time is Guild Wars 2. I've played that game since it first came out in August 2012 and have continued to play to this day. Throughout those years, I've also created and lead multiple guilds. Most notable was from 2019-2021. Guild Wars 2 was such a large part of my life that I wanted to be a content creator for the general community to give back. I created Peureachcenter.com as an information guide to the game that yields 1000+ daily visits a day.</p>
+				</div>
+
+				<div class = "grid-stats-box">
+					<div class = "grid-stats">
+						<h4 class = "grid-stats-num">5+</h4>
+						<p>Years of leading guilds</p>
+					</div>
+
+					<div class = "grid-stats">
+						<h4 class = "grid-stats-num">300+</h4>
+						<p>Guild members</p>
+					</div>
+				</div>
+			</div>
+
+			<div class = "abs-scroll-grid">
+			</div>
+
+
 		</div>
 			
 		<div class = "atm-name-box">
